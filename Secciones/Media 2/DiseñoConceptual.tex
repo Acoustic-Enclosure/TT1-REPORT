@@ -1,0 +1,536 @@
+\section{Diseño del sistema}
+\subsection{Diseño conceptual}
+\subsubsection{Necesidades y requerimientos}
+La metodología VDI 2206 emplea los requerimientos como entrada para comenzar el proceso, por tanto, estos deben definirse con anterioridad. Para este propósito se utiliza la ingeniería de requerimientos.
+\\
+La ingeniería de requerimientos consiste en definir primero las necesidades funcionales y no funcionales y transformarlas en requerimientos que son simplemente propiedades medibles.
+
+%-----------------------------tabla 3-----------------------------
+\begin{center}
+\footnotesize
+    \begin{longtable}[!htb]{| m{3em} | m{30em} | m{6em}|}
+    \hline
+    \textbf{ID}& \textbf{Necesidades} & \textbf{Clasificaci\'on}\\
+    \hline \hline
+    N1 & Medici\'on de la ac\'ustica & Funcional\\
+    \hline
+    N2 & Movimiento de paneles & Funcional\\
+    \hline
+    N3 & Modificación de la acústica & Funcional\\
+    \hline
+    N4 & Repetibilidad en acondicionamiento acústico & Funcional\\
+    \hline
+    N5 & Fiabilidad en acondicionamiento acústico & Funcional\\
+    \hline
+    N6 & Ingreso de datos por medio de interfaz de usuario & Funcional\\
+    \hline
+    N7 & Control local de la posición de los paneles & Funcional\\
+    \hline
+    N8 & Instalación posible en paredes y techo & Funcional\\
+    \hline
+    N9 & Hacer acondicionamiento a partir de tipo de instrumento a grabar & Funcional\\
+    \hline
+    N10 & Condiciones de operación propias de un estudio de audio & No funcional\\
+    \hline
+    N11 & No requerimiento de conocimientos en acondicionamiento acústico para la operación & No funcional \\
+    \hline
+    N12 & Despliegue de información por medio de interfaz & No funcional\\
+    \hline
+
+    \caption{Necesidades del sistema automatizado para el acondicionamiento acústico.}
+    \label{tab:Necesidades}
+    \end{longtable}
+\end{center}
+%-----------------------------tabla 3-----------------------------
+
+%-----------------------------tabla 4-----------------------------
+\begin{center}
+\footnotesize
+    \begin{longtable}[!htb]{| m{3em} | m{15em} | m{10em}|}
+    \hline
+    \textbf{ID}& \textbf{Requerimiento} & \textbf{Valor}\\
+    \hline\hline
+    R1 & Funci\'on principal & Hacer el acondicionamiento acústico de un estudio de audio de manera automática para diferentes instrumentos\\
+    \hline
+    R2 & Ubicaci\'on & Cuarto destinado a estudio de audio en $<$19.509021,-99.096411$>$\\
+    \hline
+    R3 & Dimensiones del estudio de audio & 6m x 4m x 3.6m\\
+    \hline
+    R4 & Medición del tiempo de reverberación & Si\\
+    \hline
+    R5 & Medici\'on de la claridad & Si\\
+    \hline
+    R6 & Medici\'on de la fuerza del sonido & Si\\
+    \hline
+    R7 & Medici\'on de la relaci\'on de energ\'ia lateral & Si\\
+    \hline
+    R8 & Medici\'on de la relaci\'on de agudos & Si\\
+    \hline
+    R9 & Medici\'on de la relaci\'on de bajos & Si\\
+    \hline
+    R10 & Medici\'on de la inteligibilidad del habla & Si\\
+    \hline
+    R11 & Disminuci\'on de ondas estacionarias & Si \\
+    \hline
+    R12 & Modificaci\'on m\'inima en tiempo de reverberaci\'on & 5 ms\\
+    \hline
+    R13 & N\'umero de par\'ametros ac\'usticos calculados & 7\\
+    \hline
+    R14 & Error de acondicionamiento & $<5\%$\\
+    \hline
+    R15 & Diferencia entre acondicionamientos sucesivos & $<5\%$\\
+    \hline
+    R16 & Tensi\'on de alimentaci\'on & 127 VAC\\
+    \hline
+    R17 & Corriente m\'axima & 30 A \\
+    \hline
+    R18 & Sistema de selecci\'on de instrumento & Si\\
+    \hline
+    R19 & Soporte para paredes & Si\\
+    \hline
+    R20 & Soporte de techo & Si \\
+    \hline
+    R21 & Informaci\'on en interfaz para usuario & Si\\
+    \hline
+
+    \caption{Tabla de requerimientos.}
+    \label{tab:Requerimientos}
+    \end{longtable}
+\end{center}
+
+%-----------------------------tabla 4-----------------------------
+
+Se realizó la validación de los requerimientos acorde con las necesidades planteadas. Para ello, se elaboró la matriz de trazabilidad mostrada en la Tabla “Matriz de trazabilidad necesidades-requerimientos”, la cual permite visualizar de manera gráfica cómo se relacionan, así como corroborar que los requerimientos satisfacen todas las necesidades.
+%-----------------------------matriz de trazabilidad-----------------------------
+\definecolor{gr}{gray}{.5}
+\begin{center}
+\footnotesize
+    \begin{longtable}[!htb]{| m{2em} || m{2em} | m{2em}| m{2em}| m{2em}| m{2em}| m{2em}| m{2em}| m{2em}| m{2em}| m{2em}| m{2em}| m{2em}|}
+    \hline
+    &N1 &N2 &N3 &N4 &N5 &N6 &N7 &N8 &N9 &N10 &N11 &N12\\
+    \hline\hline
+    R1 & \cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & \cellcolor{gr}{}& \cellcolor{gr}{}& & &  \\
+    \hline
+    R2 & & & & & & & & & &\cellcolor{gr}{} & &  \\
+    \hline
+    R3 & & & & & & & & & &\cellcolor{gr}{} & & \\
+    \hline
+    R4 & \cellcolor{gr}{}& & & & & & & & & & & \\
+    \hline
+    R5 &\cellcolor{gr}{} & & & & & & & & & & & \\
+    \hline
+    R6 &\cellcolor{gr}{} & & & & & & & & & & & \\
+    \hline
+    R7 & \cellcolor{gr}{}& & & & & & & & & & & \\
+    \hline
+    R8 & \cellcolor{gr}{}& & & & & & & & & & & \\
+    \hline
+    R9 & \cellcolor{gr}{}& & & & & & & & & & & \\
+    \hline
+    R10 &\cellcolor{gr}{} & & & & & & & & & & & \\
+    \hline
+    R11 & &\cellcolor{gr}{} & \cellcolor{gr}{}& & \cellcolor{gr}{}& &\cellcolor{gr}{} & & & & & \\
+    \hline
+    R12 & & \cellcolor{gr}{}&\cellcolor{gr}{} & & \cellcolor{gr}{}& & \cellcolor{gr}{}& & & & & \\
+    \hline
+    R13 &\cellcolor{gr}{} & & \cellcolor{gr}{}& & \cellcolor{gr}{}& & \cellcolor{gr}{}& & & & & \\
+    \hline
+    R14 & \cellcolor{gr}{}&\cellcolor{gr}{} &\cellcolor{gr}{} & & & \cellcolor{gr}{}& &\cellcolor{gr}{} & & & & \\
+    \hline
+    R15 & \cellcolor{gr}{}&\cellcolor{gr}{} &\cellcolor{gr}{} & \cellcolor{gr}{}&\cellcolor{gr}{} & & & & & & & \\
+    \hline
+    R16 & & & & & & & & & &\cellcolor{gr}{} & & \\
+    \hline
+    R17 & & & & & & & & & &\cellcolor{gr}{} & & \\
+    \hline
+    R18 & & & & & &\cellcolor{gr}{} & & & & &\cellcolor{gr}{} &\cellcolor{gr}{} \\
+    \hline
+    R19 & & & & & & &\cellcolor{gr}{} &\cellcolor{gr}{} & & \cellcolor{gr}{}& & \\
+    \hline
+    R20 & & & & & & &\cellcolor{gr}{} & \cellcolor{gr}{}& & \cellcolor{gr}{}& & \\
+    \hline
+    R21 & & & & & &\cellcolor{gr}{} & & & & & \cellcolor{gr}{}& \cellcolor{gr}{}\\
+    \hline
+
+    \caption{Matriz de trazabilidad necesidades-requerimiento.}
+    \label{tab:MatTraza}
+    \end{longtable}
+\end{center}
+%-----------------------------matriz de trazabilidad-----------------------------
+
+\subsubsection{Arquitectura funcional}
+Siguiendo con la metodología, se decidió definir las funciones y subfunciones que debe desarrollar el sistema, para así poder comenzar su diseño.
+\\ 
+Funci\'on principal: Hacer un acondicionamiento acústico a un cuarto en función de la acústica óptima para un cierto instrumento.
+\\\\
+\begin{enumerate}[{F}1.]
+    \item Medición de la acústica actual
+    \begin{enumerate}[{C}1.]
+        \item El sistema debe generar un sonido en el estudio de audio.
+        \item El sistema debe grabar la respuesta del estudio de audio al sonido generado.
+        \item El sistema debe calcular el tiempo de reverberación a partir de la respuesta del estudio de audio.
+        \item El sistema debe calcular la claridad a partir de la respuesta del estudio de audio.
+        \item El sistema debe calcular la fuerza del sonido a partir de la respuesta del estudio de audio.
+        \item El sistema debe calcular la relación de energía lateral a partir de la respuesta del estudio de audio.
+        \item El sistema debe calcular la relación de agudos a partir de la respuesta del estudio de audio.
+        \item El sistema debe calcular la relación de graves a partir de la respuesta del estudio de audio.
+        \item El sistema debe calcular la inteligibilidad del habla a partir de la respuesta del estudio de audio.
+        \item El sistema debe calcular los modos normales de vibración del estudio de audio.
+    \end{enumerate}
+
+    \item Modificación de la acústica
+    \begin{enumerate}[{C}1.]
+        \item El sistema debe conocer la diferencia entre la acústica actual y la acústica deseada.
+        \item El sistema debe calcular la posición de los paneles que generan la acústica deseada.
+        \item El sistema debe calcular la diferencia entre la posición actual de los paneles y la posición deseada.
+        \item El sistema debe mover los paneles a la posición deseada.
+        \item El sistema debe disminuir la generación de ondas estacionarias.
+    \end{enumerate}
+
+    \item Interacción con el usuario
+    \begin{enumerate}[{C}1.]
+        \item El sistema debe recibir el tipo de instrumento que se va a grabar.
+        \item El sistema debe saber la acústica óptima para el instrumento que se va a grabar.
+        \item El sistema debe mostrar al usuario los parámetros acústicos que definen la acústica actual.
+        \item El sistema debe mostrar al usuario las frecuencias problemáticas del estudio de audio (que generan ondas estacionarias).
+        \item El sistema debe dar control al usuario de cuándo hacer un acondicionamiento acústico.
+        \item El sistema debe dar a elegir al usuario para que tipo de instrumento hacer el acondicionamiento acústico.
+        \item El sistema debe mostrar la acústica ideal para dicho instrumento.
+        \item El sistema debe mostrar la acústica después del acondicionamiento y compararla con la acústica ideal. 
+    \end{enumerate}
+
+    \item Gestión de energía
+    \begin{enumerate}[{C}1.]
+        \item El sistema tiene un bajo consumo energético cuando no se está moviendo.
+        \item El sistema gestiona el movimiento de los paneles para evitar un uso excesivo de corriente.
+        \item El sistema debe transformar y controlar la energía que obtiene de la red eléctrica para entregar la tensión de alimentación correcta a cada componente.
+    \end{enumerate}
+\end{enumerate}
+
+
+\begin{enumerate}
+%----------------1------------------
+    \item Medición de la acústica actual
+    \begin{enumerate}[{1.}1.]
+         \item Generación de onda de sonido
+         \begin{enumerate}[{1.1.}1.]
+            \item Selección de ondas necesarias
+            \item Gestión de secuencia de ondas
+            \item Generación de secuencia de ondas
+         \end{enumerate}
+         
+        \item Obtenci\'on de la respuesta
+        \begin{enumerate}[{1.2.}1.]
+            \item Sensado de la respuesta
+        \end{enumerate}   
+
+        \item Procesamiento de la respuesta
+        \begin{enumerate}[{1.3.}1.]
+            \item Cálculo de los parámetros acústicos
+            \begin{enumerate}[{1.3.1.}1.]
+                \item Cálculo del tiempo de reverberación
+                \item Cálculo de la claridad
+                \item Cálculo de la fuerza del sonido
+                \item Cálculo de la relación de energía lateral
+                \item Cálculo de la relación de bajos
+                \item Cálculo de la relación de agudos
+                \item Cálculo de la inteligibilidad del sonido
+            \end{enumerate}
+            
+            \item Cálculo de modos normales de vibraci\'on
+            \begin{enumerate}[{1.3.2.}1.]
+                \item Obtención de dimensiones del estudio de audio
+                \item Obtención de posición de la fuente
+                \item Obtención de posición del receptor
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}   
+    
+%----------------2------------------
+    \item Modificación de la acústica
+    \begin{enumerate}[{2.}1.]
+        \item Cálculo de posiciones deseadas
+        \item Compensación para disminución de modos normales de vibraci\'on
+        
+        \item Movimiento de paneles
+        \begin{enumerate}[{2.3.}1.]
+        
+            \item Medición del error de posición
+            \begin{enumerate}[{2.3.1.}1.]
+                \item Medición de la posición actual
+                \item C\'alculo del error de posici\'on
+            \end{enumerate}
+
+            \item Procesamiento por estrategia de control            
+        \end{enumerate}
+         
+    \end{enumerate}
+    
+%----------------3------------------   
+    \item Interacción con el usuario
+    \begin{enumerate}[{3.}1.]
+        \item Recepción de instrucciones de acondicionamiento
+        \begin{enumerate}[{3.1.}1.]
+            \item Selección de instrumento
+            \begin{enumerate}[{3.1.1.}1.]
+                \item Despliegue de acústica ideal
+            \end{enumerate}
+        \end{enumerate}
+
+        \item Despliegue de acústica actual
+        \begin{enumerate}[{3.2.}1.]
+            \item Despliegue de las variables acústicas calculadas
+            \item Despliegue de las frecuencias de vibración problemáticas
+
+        \end{enumerate}
+
+        \item Despliegue de la acústica posterior al acondicionamiento
+        \begin{enumerate}[{3.3.}1.]
+            \item Despliegue de las variables acústicas calculadas
+            \item Despliegue de las ondas estacionarias
+        \end{enumerate}
+
+        \item Control de apagado y encendido        
+    \end{enumerate}
+ %----------------4------------------     
+    \item Gestión de energía
+    \begin{enumerate}[{4.}1.]
+    
+        \item Conversión y regulación de tensión
+        \begin{enumerate}[{4.1.}1.]
+            \item Conversión de tensión
+            \item Regulación de tensión
+        \end{enumerate}
+
+        \item Medición del consumo energético
+        \begin{enumerate}[{4.2.}1.]
+            \item Medición de la tensión de entrada
+            \item Medición de la corriente de entrada
+        \end{enumerate}
+
+        \item Gestión del consumo energético
+        \begin{enumerate}[{4.3.}1.]
+            \item Disminución de la potencia proporcional al consumo
+        \end{enumerate}
+        
+    \end{enumerate}
+\end{enumerate}
+
+%Imagenes del idef0
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/5.jpg}
+    \caption{\footnotesize Diagrama de las funciones del sistema para el tratamiento acústico.}
+    \label{fig:DiagramaFunciones}
+\end{figure}
+\FloatBarrier
+%---------------------Imagenes de los idefs----------------------------------
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/6.jpg}
+    \caption{\footnotesize IDEF0 del sistema para el acondicionamiento acústico.}
+    \label{fig:IDEF0_Sistema}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/7.jpg}
+    \caption{\footnotesize IDEF0 del Módulo de medición de la acústica actual.}
+    \label{fig:IDEF0_M1}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/8.jpg}
+    \caption{\footnotesize IDEF0 del Módulo de modificación de la acústica.}
+    \label{fig:IDEF0_M2}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/9.jpg}
+    \caption{\footnotesize IDEF0 del Módulo de interacción con el usuario.}
+    \label{fig:IDEF0_M3}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/10.jpg}
+    \caption{\footnotesize IDEF0 del Módulo de gestión de energía.}
+    \label{fig:IDEF0_M4}
+\end{figure}
+\FloatBarrier
+%---------------------Imagenes de los idefs----------------------------------
+Se procedió a validar la relación entre los requerimientos y las funciones, para lo cual se elaboró la matriz de trazabilidad presentada en la Tabla “Matriz de trazabilidad requerimientos-funciones”.
+
+%-------------Matriz de trazabilidad requerimientos-funciones--------------------
+\definecolor{gr}{gray}{.5}
+\begin{center}
+\footnotesize
+    \begin{longtable}[!htb]{| m{2em} || m{2em} | m{2em}| m{2em}| m{2em}| m{2em}| m{2em}| m{2em}| m{2em}| m{2em}| m{2em}| m{2em}| m{2em}| m{2em}|}
+    \hline
+    &F1.1 &F1.2 &F1.3 &F2.1 &F2.2 &F2.3 &F3.1 &F3.2 &F3.3 &F3.4 &F4.1 &F4.2 &F4.3\\
+    \hline\hline
+    R1 & & \cellcolor{gr}{}&\cellcolor{gr}{} &\cellcolor{gr}{} & \cellcolor{gr}{}&\cellcolor{gr}{}&\cellcolor{gr}{} & & & & & & \\
+    \hline
+    R2 &\cellcolor{gr}{} &\cellcolor{gr}{} & & &\cellcolor{gr}{} & & & & & & & &\\
+    \hline
+    R3 &\cellcolor{gr}{} & \cellcolor{gr}{}& & &\cellcolor{gr}{} & & & & & & & &\\
+    \hline
+    R4 &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & & & & &\cellcolor{gr}{} &\cellcolor{gr}{} & & & &\\
+    \hline
+    R5 &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & & & & &\cellcolor{gr}{} &\cellcolor{gr}{} & & & &\\
+    \hline
+    R6 &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & & & & &\cellcolor{gr}{} &\cellcolor{gr}{} & & & &\\
+    \hline
+    R7 &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & & & & &\cellcolor{gr}{} &\cellcolor{gr}{} & & & &\\
+    \hline
+    R8 &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & & & & &\cellcolor{gr}{} &\cellcolor{gr}{} & & & &\\
+    \hline
+    R9 &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & & & & &\cellcolor{gr}{} &\cellcolor{gr}{} & & & &\\
+    \hline
+    R10 &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & & & & &\cellcolor{gr}{} &\cellcolor{gr}{} & & & &\\
+    \hline
+    R11 & & & &\cellcolor{gr}{} &\cellcolor{gr}{} & \cellcolor{gr}{}& & & & & & &\\
+    \hline
+    R12 & & & &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & & & & & & &\\
+    \hline
+    R13 &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & & & & &\cellcolor{gr}{} &\cellcolor{gr}{} & & & &\\
+    \hline
+    R14 & & & &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & & & & & & &\\
+    \hline
+    R15 & & & &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & & & & & & &\\
+    \hline
+    R16 & & & & & & & & & & & \cellcolor{gr}{}& \cellcolor{gr}{}&\cellcolor{gr}{}\\
+    \hline
+    R17 & & & & & & & & & & & \cellcolor{gr}{}& \cellcolor{gr}{}&\cellcolor{gr}{}\\
+    \hline
+    R18 & & & & & & &\cellcolor{gr}{} & & &\cellcolor{gr}{} & & &\\
+    \hline
+    R19 & & & &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & & & & & & &\\
+    \hline
+    R20 & & & &\cellcolor{gr}{} &\cellcolor{gr}{} &\cellcolor{gr}{} & & & & & & &\\
+    \hline
+    R21 & & & & & & & &\cellcolor{gr}{} &\cellcolor{gr}{} & & & &\\
+    \hline
+
+    \caption{\footnotesize Matriz de trazabilidad requerimientos-funciones.}
+    \label{tab:MatTraza_ReqFun}
+    \end{longtable}
+\end{center}
+
+%-------------Matriz de trazabilidad requerimientos-funciones--------------------
+\subsubsection{Arquitectura física}
+Para dar forma a la parte física del proyecto se definen los módulos que darán integridad a la propuesta de solución. La arquitectura física del sistema es representada por la transformación de las funciones en módulos, que tomarán parte en los ensambles y componentes físicos. La arquitectura física está planteada para ser capaz de realizar las funciones descritas en la arquitectura funcional y cumplir con los requerimientos del sistema para lograr el funcionamiento deseado.
+
+\begin{enumerate}[{MF}1]
+    \item Módulo de procesamiento: Es un módulo cuya función principal es el procesamiento de las ondas de sonido, el cálculo de las posiciones de los paneles y el procesamiento de los comandos ingresados por el usuario. El módulo se define en submódulos, donde el submódulo \textbf{MF}$_{1.1}$ es el encargado de procesar la respuesta del estudio y realizar los cálculos de los parámetros acústicos y los modos normales de vibración. En el submódulo \textbf{MF}$_{1.2}$ se generan los cálculos de las posiciones deseadas de los paneles, así como el procesamiento de la estrategia de control para el movimiento de los mismos, contemplando la medición y el cálculo del error de posición, para que la localización de los paneles sea fiable. El submódulo \textbf{MF}$_{1.3}$ se encarga de procesar todas las instrucciones de acondicionamiento ingresadas por el usuario, así como de todos los parámetros acústicos que se despliegan en la interfaz de muestreo.
+
+    \item Módulo de generación y medición de la acústica: Tiene la función de generar las ondas que excitan el estudio (\textbf{MF}$_{2.1}$) y medir la interacción de las ondas con el recinto (\textbf{MF}$_{2.2}$). El submódulo de la generación de las ondas de sonido funciona a partir de un algoritmo que genera una señal se excitación que es transmitida al estudio mediante una bocina, las ondas que son transmitidas se encargan de describir las características del estudio. Así, las señales que interactúan con el estudio posteriormente son recibidas por el submódulo de medición que consta de un micrófono que capta todas las señales que han interactuado con el recinto.
+
+    \item Módulo modificador de la acústica: Este módulo tiene la función de generar el movimiento de los paneles acústicos considerando la compensación para disminuir los modos normales de vibración (\textbf{MF}$_{3.1}$). El movimiento se lleva a cabo mediante un mecanismo que permite su colocación en un punto donde se requiere modificar la superficie que entra en contacto con las ondas sonoras, este mecanismo es capaz de sensar el error de posición con el propósito de que el lugar en el que el módulo requiere la localización del panel sea específicamente la solicitada. 
+
+    \item Módulo interfaz de usuario: Además de gestionar el encendido y apagado del sistema, el submódulo de interacción directa (\textbf{MF}$_{4.1}$) se encarga de recibir las instrucciones por parte del usuario para el acondicionamiento del estudio, es decir, la selección del instrumento. Al seleccionar el instrumento la consola muestra a través del submódulo de muestreo de datos (\textbf{MF}$_{4.2}$) la acústica ideal para dicho instrumento y posteriormente de que el módulo dos realiza el acondicionamiento se muestran los nuevos valores de las variables acústicas. De igual forma la interfaz muestra las variables acústicas antes de realizar el proceso de acondicionamiento y las frecuencias de vibración que son un problema para el sistema.
+
+    \item Módulo gestor de energía: Se encarga de gestionar el suministro eléctrico requerido por cada uno de los módulos y submódulos. El submódulo de conversión y regulación de la tensión de entrada (\textbf{MF}$_{5.1}$) convierte y regula la señal de corriente alterna que es suministrada al sistema dependiendo de las características de alimentación de cada uno de los componentes del sistema. El módulo es capaz de gestionar el consumo energético del sistema y sus componentes, además de disminuir proporcionalmente la potencia en contra del consumo, lográndolo a través del submódulo de medición del consumo energético (\textbf{MF}$_{5.2}$), es decir, la medición de la tensión de entrada y la corriente que demanda el sistema.
+\end{enumerate}
+
+De igual manera se realizó la validación de los módulos y submódulos acorde a las funciones planteadas para el sistema, haciendo uso de la matriz de trazabilidad que se muestra a continuación.
+
+
+%----------------------Matriz de trazabilidad--------------------------
+\definecolor{gr}{gray}{.5}
+\begin{center}
+\footnotesize
+    \begin{longtable}[!htb]{| m{3em} || m{3em} | m{3em}| m{3em}| m{3em}| m{3em}| m{3em}| m{3em}| m{3em}| m{3em}| m{3em}|}
+    \hline
+    & \multicolumn{3}{c|}{\textbf{MF}$_{1}$} & \multicolumn{2}{|c|}{\textbf{MF}$_{2}$} & \textbf{MF}$_{3}$ & \multicolumn{2}{|c|}{\textbf{MF}$_{4}$} & \multicolumn{2}{|c|}{\textbf{MF}$_{5}$}\\
+    \cline{2-11}
+    & \textbf{MF}$_{1.1}$ & \textbf{MF}$_{1.2}$ & \textbf{MF}$_{1.3}$ & \textbf{MF}$_{2.1}$ & \textbf{MF}$_{2.2}$ & \textbf{MF}$_{3.1}$ & \textbf{MF}$_{4.1}$ & \textbf{MF}$_{4.2}$ & \textbf{MF}$_{5.1}$ & \textbf{MF}$_{5.2}$ \\
+    \hline\hline
+    
+    \textbf{F}$_{1.1}$ & & & & \cellcolor{gr}{} & & & & & & \\
+    \hline
+    \textbf{F}$_{1.2}$ & & & & & \cellcolor{gr}{} & & & & & \\
+    \hline
+    \textbf{F}$_{1.3}$ & \cellcolor{gr}{}& & & & & & & & & \\
+    \hline
+    \textbf{F}$_{2.1}$ & & \cellcolor{gr}{}& & & & & & & & \\
+    \hline
+    \textbf{F}$_{2.2}$ & & \cellcolor{gr}{}& & & & \cellcolor{gr}{} & & & & \\
+    \hline
+    \textbf{F}$_{2.3}$ & & & & & & \cellcolor{gr}{} & & & & \\
+    \hline
+    \textbf{F}$_{3.1}$ & & & \cellcolor{gr}{} & & & & \cellcolor{gr}{} & & & \\
+    \hline
+    \textbf{F}$_{3.2}$ & & & \cellcolor{gr}{} & & & & & \cellcolor{gr}{} & & \\
+    \hline
+    \textbf{F}$_{3.3}$ & & & \cellcolor{gr}{} & & & & & \cellcolor{gr}{} & & \\
+    \hline
+    \textbf{F}$_{3.4}$ & & & & & & & \cellcolor{gr}{} & & & \\
+    \hline
+    \textbf{F}$_{4.1}$ & & & & & & & & & \cellcolor{gr}{} & \\
+    \hline
+    \textbf{F}$_{4.2}$ & & & & & & & & & & \cellcolor{gr}{} \\
+    \hline
+    \textbf{F}$_{4.3}$ & & & & & & & & & & \cellcolor{gr}{} \\
+    \hline
+    
+    \caption{\footnotesize Matriz de trazabilidad de arquitectura física}
+    \label{tab:MatTrazArquiFis}
+    \end{longtable}
+\end{center}
+%----------------------Matriz de trazabilidad--------------------------
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=1\textwidth]{imagenes/sistema para acondicionamiento.jpg}
+    \caption{\footnotesize Diagrama del sistema para el acondicionamiento ac\'ustico}
+    \label{fig:DiagramaSistema}
+\end{figure}
+\FloatBarrier
+
+\subsubsection{Propuesta de solución}
+Para desarrollar la propuesta de solución, primero se hizo uso de la matriz morfológica para observar las diferentes alternativas que se tienen para cada uno de los sistemas. La matriz morfológica toma los aspectos mas relevantes del diseño físico y las diferentes soluciones. Lo anterior nos permitirá generar diferentes conceptos solución, que sean combinaciones de las alternativas de solución para los diferentes sistemas.
+Es necesario hacer una valoración de los conceptos solución, y para este propósito, es necesario contar con criterios que nos permitan separar los unos de los otros. De acuerdo a la metodología, se hará uso del Proceso Analítico Jerárquico (AHP por sus siglas en ingles).
+
+\begin{itemize}
+    \item $C_{r1}$ Velocidad de actuación
+    \item $C_{r2}$ Peso
+    \item $C_{r3}$ Complejidad del mecanismo
+    \item $C_{r4}$ Cantidad de actuadores
+    \item $C_{r5}$ Costo de la actuación
+    \item $C_{r6}$ Resolución acústica
+    \item $C_{r7}$ Repetitibilidad
+    \item $C_{r8}$ Consumo energético
+    \item $C_{r9}$ Variedad de potencias consumidas
+    \item $C_{r10}$ Facilidad del control de la actuación
+    \item $C_{r11}$ Tamaño
+    \item $C_{r12}$ Confiabilidad del sistema de actuación
+    \item $C_{r13}$ Complejidad de manufactura del mecanismo de actuación
+    \item $C_{r14}$ Error de posición 
+    \item $C_{r15}$ Cantidad de hardware externo al equipo de computo personal
+    \item $C_{r16}$ Relación entre señal y ruido
+    \item $C_{r17}$ Sensibilidad del micrófono
+    \item $C_{r18}$ Potencia de procesado de la tarjeta embebida
+    \item $C_{r19}$ Potencia de procesado del equipo de computo
+    \item $C_{r20}$ Simplicidad de la medición en el error de posición
+    \item $C_{r21}$ Robustez necesaria del anclaje
+    \item $C_{r22}$ Propensión a fallas estructurales
+    \item $C_{r23}$ Propensión a fallas eléctricas
+    \item $C_{r24}$ Facilidad para saltar entre disposiciones 
+    \item $C_{r25}$ Modularidad
+    \item $C_{r26}$ Costo de la electrónica embebida
+    \item $C_{r27}$ Cantidad de paneles utilizados
+\end{itemize}
+La mayoría de los criterios enlistados anteriormente están íntimamente relacionados con la forma en la que el sistema mueve los paneles a lo largo del cuarto, por lo que la generación de conceptos solución, tendrán como eje principal, las diferentes formas de movimiento de los paneles.
+Algunas de las alternativas de solución para sistemas específicos, son compatibles con diferentes propuestas de solución, por lo que se estudiaran aparte y se adjuntaran al concepto solución elegido en base a los criterios que si son propios del mismo.
+\input{Secciones/Media 2/ModulosDetallados/AHP}
+
+%Imagenes del prototipo
+
+
+
