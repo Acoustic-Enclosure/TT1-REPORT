@@ -196,7 +196,11 @@ La gráfica del decaimiento se obtiene mediante la integral de Schroeder, la cua
     schroeder_normalized = schroeder_cumsum / max(schroeder_cumsum);
     DC = flipud(10*log10(schroeder_normalized));
 \end{lstlisting}
-La gráfica se muestra en decibelios y va de 0 a $-\infty$. \hline\break
+La gráfica se muestra en decibelios y va de 0 a $-\infty$.
+
+\newpage
+
+\rule{\linewidth}{0.4pt}
 La curva de decaimiento de la energía nos permite ver el decaimiento exponencial del sonido como un decaimiento lineal, y así, poder ajustar rectas que se apeguen mas al decaimiento de la señal sin verse interferida por el ruido de fondo. Adicionalmente, podemos usar esta curva para calcular los otros parámetros acústicos como $D_{50}$ o $C_{50}$.\hfill\break
 \begin{figure}[!htb]
     \centering
