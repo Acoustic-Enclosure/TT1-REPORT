@@ -39,6 +39,7 @@ main.pdf
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
+*.DS_Store
 
 ## Build tool directories for auxiliary files
 # latexrun

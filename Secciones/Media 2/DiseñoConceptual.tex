@@ -10,9 +10,9 @@ La ingeniería de requerimientos consiste en definir primero las necesidades fun
 \footnotesize
     \begin{longtable}[!htb]{| m{3em} | m{30em} | m{6em}|}
     \hline
-    \textbf{ID}& \textbf{Necesidades} & \textbf{Clasificaci\'on}\\
+    \textbf{ID}& \textbf{Necesidades} & \textbf{Clasificación}\\
     \hline \hline
-    N1 & Medici\'on de la ac\'ustica & Funcional\\
+    N1 & Medición de la acústica & Funcional\\
     \hline
     N2 & Movimiento de paneles & Funcional\\
     \hline
@@ -50,47 +50,47 @@ La ingeniería de requerimientos consiste en definir primero las necesidades fun
     \hline
     \textbf{ID}& \textbf{Requerimiento} & \textbf{Valor}\\
     \hline\hline
-    R1 & Funci\'on principal & Hacer el acondicionamiento acústico de un estudio de audio de manera automática para diferentes instrumentos\\
+    R1 & Función principal & Hacer el acondicionamiento acústico de un estudio de audio de manera automática para diferentes instrumentos\\
     \hline
-    R2 & Ubicaci\'on & Cuarto destinado a estudio de audio en $<$19.509021,-99.096411$>$\\
+    R2 & Ubicación & Cuarto destinado a estudio de audio en $<$19.509021,-99.096411$>$\\
     \hline
     R3 & Dimensiones del estudio de audio & 6m x 4m x 3.6m\\
     \hline
     R4 & Medición del tiempo de reverberación & Si\\
     \hline
-    R5 & Medici\'on de la claridad & Si\\
+    R5 & Medición de la claridad & Si\\
     \hline
-    R6 & Medici\'on de la fuerza del sonido & Si\\
+    R6 & Medición de la fuerza del sonido & Si\\
     \hline
-    R7 & Medici\'on de la relaci\'on de energ\'ia lateral & Si\\
+    R7 & Medición de la relación de energía lateral & Si\\
     \hline
-    R8 & Medici\'on de la relaci\'on de agudos & Si\\
+    R8 & Medición de la relación de agudos & Si\\
     \hline
-    R9 & Medici\'on de la relaci\'on de bajos & Si\\
+    R9 & Medición de la relación de bajos & Si\\
     \hline
-    R10 & Medici\'on de la inteligibilidad del habla & Si\\
+    R10 & Medición de la inteligibilidad del habla & Si\\
     \hline
-    R11 & Disminuci\'on de ondas estacionarias & Si \\
+    R11 & Disminución de ondas estacionarias & Si \\
     \hline
-    R12 & Modificaci\'on m\'inima en tiempo de reverberaci\'on & 5 ms\\
+    R12 & Modificación mínima en tiempo de reverberación & 5 ms\\
     \hline
-    R13 & N\'umero de par\'ametros ac\'usticos calculados & 7\\
+    R13 & Número de parámetros acústicos calculados & 7\\
     \hline
     R14 & Error de acondicionamiento & $<5\%$\\
     \hline
     R15 & Diferencia entre acondicionamientos sucesivos & $<5\%$\\
     \hline
-    R16 & Tensi\'on de alimentaci\'on & 127 VAC\\
+    R16 & Tensión de alimentación & 127 VAC\\
     \hline
-    R17 & Corriente m\'axima & 30 A \\
+    R17 & Corriente máxima & 30 A \\
     \hline
-    R18 & Sistema de selecci\'on de instrumento & Si\\
+    R18 & Sistema de selección de instrumento & Si\\
     \hline
     R19 & Soporte para paredes & Si\\
     \hline
     R20 & Soporte de techo & Si \\
     \hline
-    R21 & Informaci\'on en interfaz para usuario & Si\\
+    R21 & Información en interfaz para usuario & Si\\
     \hline
 
     \caption{Tabla de requerimientos.}
@@ -161,7 +161,7 @@ Se realizó la validación de los requerimientos acorde con las necesidades plan
 \subsubsection{Arquitectura funcional}
 Siguiendo con la metodología, se decidió definir las funciones y subfunciones que debe desarrollar el sistema, para así poder comenzar su diseño.
 \\ 
-Funci\'on principal: Hacer un acondicionamiento acústico a un cuarto en función de la acústica óptima para un cierto instrumento.
+Función principal: Hacer un acondicionamiento acústico a un cuarto en función de la acústica óptima para un cierto instrumento.
 \\\\
 \begin{enumerate}[{F}1.]
     \item Medición de la acústica actual
@@ -212,14 +212,14 @@ Funci\'on principal: Hacer un acondicionamiento acústico a un cuarto en funció
 %----------------1------------------
     \item Medición de la acústica actual
     \begin{enumerate}[{1.}1.]
-         \item Generación de onda de sonido
-         \begin{enumerate}[{1.1.}1.]
+        \item Generación de onda de sonido
+        \begin{enumerate}[{1.1.}1.]
             \item Selección de ondas necesarias
             \item Gestión de secuencia de ondas
             \item Generación de secuencia de ondas
-         \end{enumerate}
-         
-        \item Obtenci\'on de la respuesta
+        \end{enumerate}
+        
+        \item Obtención de la respuesta
         \begin{enumerate}[{1.2.}1.]
             \item Sensado de la respuesta
         \end{enumerate}   
@@ -237,7 +237,7 @@ Funci\'on principal: Hacer un acondicionamiento acústico a un cuarto en funció
                 \item Cálculo de la inteligibilidad del sonido
             \end{enumerate}
             
-            \item Cálculo de modos normales de vibraci\'on
+            \item Cálculo de modos normales de vibración
             \begin{enumerate}[{1.3.2.}1.]
                 \item Obtención de dimensiones del estudio de audio
                 \item Obtención de posición de la fuente
@@ -250,7 +250,7 @@ Funci\'on principal: Hacer un acondicionamiento acústico a un cuarto en funció
     \item Modificación de la acústica
     \begin{enumerate}[{2.}1.]
         \item Cálculo de posiciones deseadas
-        \item Compensación para disminución de modos normales de vibraci\'on
+        \item Compensación para disminución de modos normales de vibración
         
         \item Movimiento de paneles
         \begin{enumerate}[{2.3.}1.]
@@ -258,12 +258,12 @@ Funci\'on principal: Hacer un acondicionamiento acústico a un cuarto en funció
             \item Medición del error de posición
             \begin{enumerate}[{2.3.1.}1.]
                 \item Medición de la posición actual
-                \item C\'alculo del error de posici\'on
+                \item Cálculo del error de posición
             \end{enumerate}
 
             \item Procesamiento por estrategia de control            
         \end{enumerate}
-         
+        
     \end{enumerate}
     
 %----------------3------------------   
@@ -290,9 +290,9 @@ Funci\'on principal: Hacer un acondicionamiento acústico a un cuarto en funció
             \item Despliegue de las ondas estacionarias
         \end{enumerate}
 
-        \item Control de apagado y encendido        
+        \item Control de apagado y encendido
     \end{enumerate}
- %----------------4------------------     
+%----------------4------------------
     \item Gestión de energía
     \begin{enumerate}[{4.}1.]
     
@@ -488,7 +488,7 @@ De igual manera se realizó la validación de los módulos y submódulos acorde 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=1\textwidth]{imagenes/sistema para acondicionamiento.jpg}
-    \caption{\footnotesize Diagrama del sistema para el acondicionamiento ac\'ustico}
+    \caption{\footnotesize Diagrama del sistema para el acondicionamiento acústico}
     \label{fig:DiagramaSistema}
 \end{figure}
 \FloatBarrier
@@ -504,7 +504,7 @@ Es necesario hacer una valoración de los conceptos solución, y para este prop�
     \item $C_{r4}$ Cantidad de actuadores
     \item $C_{r5}$ Costo de la actuación
     \item $C_{r6}$ Resolución acústica
-    \item $C_{r7}$ Repetitibilidad
+    \item $C_{r7}$ Repetibilidad
     \item $C_{r8}$ Consumo energético
     \item $C_{r9}$ Variedad de potencias consumidas
     \item $C_{r10}$ Facilidad del control de la actuación
@@ -530,7 +530,4 @@ La mayoría de los criterios enlistados anteriormente están íntimamente relaci
 Algunas de las alternativas de solución para sistemas específicos, son compatibles con diferentes propuestas de solución, por lo que se estudiaran aparte y se adjuntaran al concepto solución elegido en base a los criterios que si son propios del mismo.
 \input{Secciones/Media 2/ModulosDetallados/AHP}
 
-%Imagenes del prototipo
-
-
-
+%Imágenes del prototipo
