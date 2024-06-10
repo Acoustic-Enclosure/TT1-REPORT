@@ -593,16 +593,16 @@ El propósito del control es hacer que el eje del prisma triangular, se mueva un
 Se hará uso de un control por trayectoria, con una interpolación con polinomios de Bezier, ya que nos permitirá un movimiento suave de aceleración y desaceleración del motor. \\
 Los polinomio interpolador de grado $2n-1$ tiene la siguiente formula:
 
-\begin{dmath}
-    \mu(t, t_1, t_2) = \mu(\delta) = \delta^{3}\left(\gamma_1 - \gamma_2\delta + \gamma_3\delta^{2} - \gamma_4\delta^{3} + \dots + \left(-1 \right)^{n-1}\gamma_n\delta^{n-1}  \right) 
-\end{dmath}
+% \begin{dmath}
+$\mu(t, t_1, t_2) = \mu(\delta) = \delta^{3}\left(\gamma_1 - \gamma_2\delta + \gamma_3\delta^{2} - \gamma_4\delta^{3} + \dots + \left(-1 \right)^{n-1}\gamma_n\delta^{n-1}  \right)$
+% \end{dmath}
 
 Donde $\delta$ es igual a $\frac{t - t_1}{t_2 - t_1}$ \\
 En este caso utilizaremos un polinomio de grado 11, entonces $n = 6$.
 
-\begin{dmath}
-    \mu(\delta) = \delta^{6}\left(\gamma_1 - \gamma_2\delta + \gamma_3\delta^{2} - \gamma_4\delta^{3}+ \gamma_5\delta^{4} - \gamma_6\delta^{5} \right) 
-\end{dmath}
+% \begin{dmath}
+$\mu(\delta) = \delta^{6}\left(\gamma_1 - \gamma_2\delta + \gamma_3\delta^{2} - \gamma_4\delta^{3}+ \gamma_5\delta^{4} - \gamma_6\delta^{5} \right)$
+% \end{dmath}
 
 Los polinomios cuentan con la condición de frontera, $\mu(1) = 1$, y por tanto, las múltiples derivadas, son iguales a cero. Se pueden utilizar estas condiciones de frontera para encontrar los parámetros $\gamma$, los cuales son únicos para un polinomio de cierto grado. En nuestro caso, las $\gamma$ son:
 \begin{itemize}
@@ -657,17 +657,17 @@ Los únicos parámetros que tomara entonces la interpolación de entre dos posic
 Estos parámetros son fijos, y dependen de la implementación. En nuestro caso, ya que queremos que el eje de la corona de un tercio de vuelta en cada trayectoria, entonces las posiciones del eje del tornillo irán desde cero hasta $RT*n*2*pi/3$. Donde $RT$ es la ganancia debido a la transmisión de corona y $n$ va de 1 a 3, que son las posiciones que va a tomar. \\
 Externamente, la interpolación triple solo tomara tres parámetros, el tiempo que le tomara al sistema realizar un tercio de vuelta, el tiempo que esperará para permitir el desacoplamiento de los paneles y la relación de transmisión de la transmisión de corona. \\
 La ley de control de un PID es la siguiente:
-\begin{dmath}
-    u = J\left(-k_p(q-q^{*})-k_i\int(q-q^{*})\partial t-k_d\left(\frac{\partial q}{\partial t}-\frac{\partial q^*}{\partial t}\right)\right)+B\frac{\partial q^*}{\partial t}+J\frac{\partial^2 q^*}{\partial t^2}
-\end{dmath}
+% \begin{dmath}
+$u = J\left(-k_p(q-q^{*})-k_i\int(q-q^{*})\partial t-k_d\left(\frac{\partial q}{\partial t}-\frac{\partial q^*}{\partial t}\right)\right)+B\frac{\partial q^*}{\partial t}+J\frac{\partial^2 q^*}{\partial t^2}$
+% \end{dmath}
 Donde $q$ es la posición y $dq$ y $ddq$, la velocidad y la aceleración respectivamente. La notación $q^*$ indica los parametros de la trayectoria.
 Adicionalmente para la calibración de las ganancias debemos calcular los parámetros $\zeta$ y $\omega_n$, mediante las siguientes formulas:
-\begin{dmath}
-    \zeta = \frac{log\left(\frac{Mp}{100}\right)}{\sqrt{\pi^{2}+\left(log\left(\frac{Mp}{100}\right) \right)^{2}}}
-\end{dmath}
-\begin{dmath}
-    \omega_n = \frac{3}{\zeta t_s}
-\end{dmath}
+% \begin{dmath}
+$\zeta = \frac{log\left(\frac{Mp}{100}\right)}{\sqrt{\pi^{2}+\left(log\left(\frac{Mp}{100}\right) \right)^{2}}}$
+% \end{dmath}
+% \begin{dmath}
+$\omega_n = \frac{3}{\zeta t_s}$
+% \end{dmath}
 Donde $t_s$ es el tiempo de asentamiento y $Mp$ es el máximo sobre impulso. \\
 La ganancia integral se define estocásticamente, mientras que la ganancia derivativa se define como $k_d = 2\zeta\omega_n$ y la ganancia proporcional como $k_p = \omega_n^2$. \\
 Los parámetros externos de la interpolación y del control PID se hicieron mediante mascaras para poder cambiar rápidamente los parámetros. \\

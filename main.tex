@@ -1,17 +1,12 @@
 \documentclass[letterpaper,12pt,oneside]{article}
 \usepackage[top=1in,left=1in,right=1in,bottom=1in]{geometry}
-\usepackage{graphicx, textcomp} % Required for inserting images
-\usepackage{amssymb, amsmath} %Paquetes matemáticos de la American Mathematical Society
+\usepackage{graphicx,textcomp} % Required for inserting images
+\usepackage{amssymb,amsmath} %Paquetes matemáticos de la American Mathematical Society
 \usepackage{titlesec}
 \setcounter{secnumdepth}{5}
 %----------------------------------------------------
-% \usepackage[T1]{fontenc}
 \usepackage[english,spanish,es-tabla]{babel}
 \usepackage[utf8]{inputenc}
-% \usepackage[tipo]{inputenc}
-% \selectlanguage{spanish}
-\usepackage{utf8add}
-% \usepackage{latex-uni8}
 %----------------------------------------------------
 \usepackage{tabto}
 \usepackage{enumerate}
@@ -21,19 +16,17 @@
 \usepackage{hyperref}
 \usepackage{subcaption}
 \usepackage{gensymb}
-\usepackage{breqn}
+% \usepackage{breqn} Este es el del problema
 \usepackage{longtable}
 \usepackage{enumitem}
-\usepackage{multicol}
 
 % -----------AGREGAR MÁS SUBSECCIONES----------------
 \setcounter{tocdepth}{5}
 %--------------BIBLIOGRAFÍA--------------------------
 \usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
-% \bibliography{Referencias/predoc}
 \addbibresource{Referencias/predoc.bib}
 %----------------------------------------------------
-\usepackage{xcolor, colortbl}
+\usepackage{xcolor,colortbl}
 \usepackage{csquotes}
 \usepackage{multirow}
 \usepackage{multicol}
@@ -94,29 +87,30 @@
 \input{Secciones/Preeliminar/Abstract}
 
 %---------------Inicial---------------
-% \input{Secciones/Inicial/Introducción}
-% \input{Secciones/Inicial/PlanteamientoProblema}
-% \input{Secciones/Inicial/Justificación}
-% \input{Secciones/Inicial/Objetivo}
-% \input{Secciones/Inicial/Antecedentes}
+\input{Secciones/Inicial/Introducción}
+\input{Secciones/Inicial/PlanteamientoProblema}
+\input{Secciones/Inicial/Justificación}
+\input{Secciones/Inicial/Objetivo}
+\input{Secciones/Inicial/Antecedentes}
 
 %---------------Media 1---------------
-% \input{Secciones/Media 1/MarcoTeorico}
+\input{Secciones/Media 1/MarcoTeorico}
 \input{Secciones/Media 1/MarcoProcedimental}
 
 %---------------Media 2---------------
-% \input{Secciones/Media 2/DiseñoConceptual} // Este esta fallando
-% \input{Secciones/Media 2/DiseñoDetallado}
+\input{Secciones/Media 2/DiseñoConceptual}
+%\input{Secciones/Media 2/ModulosDetallados/AHP}
+\input{Secciones/Media 2/DiseñoDetallado}
 
 %---------------Media 3---------------
 % \input{Secciones/Media 3/Administracion}
 
 %---------------Media 4---------------
-% \input{Secciones/Media 4/GeneracionDeDisposicion}
-% \input{Secciones/Media 4/DifusoresYAbsorsores}
+\input{Secciones/Media 4/GeneracionDeDisposicion}
+\input{Secciones/Media 4/DifusoresYAbsorsores}
 
-% \input{Secciones/Adicional/Apéndices}
-% \include{Secciones/Adicional/Anexos}
+\input{Secciones/Adicional/Apéndices}
+\include{Secciones/Adicional/Anexos}
 \include{Secciones/Adicional/Referencias}
 
 \end{document}

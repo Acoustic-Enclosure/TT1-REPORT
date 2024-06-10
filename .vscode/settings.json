@@ -8,7 +8,7 @@
         "-interaction=nonstopmode",
         "-file-line-error",
         "-pdf",
-        "-outdir=%OUTDIR%",
+        "--aux-directory=.aux",
         "%DOC%"
       ],
       "env": {}
@@ -20,6 +20,7 @@
         "-synctex=1",
         "-interaction=nonstopmode",
         "-file-line-error",
+        "--aux-directory=.aux",
         "%DOC%"
       ],
       "env": {}
@@ -43,46 +44,52 @@
         "%DOCFILE%"
       ],
       "env": {}
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": [
+        "%DOCFILE%"
+      ],
+      "env": {}
     }
   ],
   "latex-workshop.latex.recipes": [
-    {
-      "name": "pdfLaTeX",
-      "tools": [
-        "pdflatex"
-      ]
-    },
     {
       "name": "latexmk 🔃",
       "tools": [
         "latexmk"
       ]
     },
-    {
-      "name": "xelatex",
-      "tools": [
-        "xelatex"
-      ]
-    },
-    {
-      "name": "pdflatex ➞ bibtex ➞ pdflatex`x2",
-      "tools": [
-        "pdflatex",
-        "bibtex",
-        "pdflatex",
-        "pdflatex"
-      ]
-    },
-    {
-      "name": "xelatex ➞ bibtex ➞ xelatex`x2",
-      "tools": [
-        "xelatex",
-        "bibtex",
-        "xelatex",
-        "xelatex"
-      ]
-    }
+    // {
+    //   "name": "pdflatex ➞ biber ➞ pdflatex`x2",
+    //   "tools": [
+    //     "pdflatex",
+    //     "biber",
+    //     "pdflatex",
+    //     "pdflatex"
+    //   ]
+    // },
+    // {
+    //   "name": "xelatex ➞ biber ➞ xelatex`x2",
+    //   "tools": [
+    //     "xelatex",
+    //     "biber",
+    //     "xelatex",
+    //     "xelatex"
+    //   ]
+    // }
   ],
+  // Fix citation warnings in editor when using biber (wavy lines).
+  "latex-workshop.intellisense.citation.backend": "biblatex",
+  // Automatically build when a file is saved.
+  "latex-workshop.latex.autoBuild.run": "never",
+  // Show error message when LaTeX build fails.
+  // "latex-workshop.message.error.show": true,
+  // Sync PDF with cursor position after compiling.
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  // Automatically choose last used recipe on next build.
+  "latex-workshop.latex.recipe.default": "lastUsed",
   "cSpell.language": "es",
   "cSpell.words": [
     "SUBSECCIONES"

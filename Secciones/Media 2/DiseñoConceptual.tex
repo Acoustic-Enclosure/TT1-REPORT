@@ -163,10 +163,10 @@ Siguiendo con la metodología, se decidió definir las funciones y subfunciones 
 \\ 
 Función principal: Hacer un acondicionamiento acústico a un cuarto en función de la acústica óptima para un cierto instrumento.
 \\\\
-\begin{enumerate}[{F}1.]
-    \item Medición de la acústica actual
-    \begin{enumerate}[{C}1.]
-        \item El sistema debe generar un sonido en el estudio de audio.
+\begin{enumerate}
+    \item[{F}1.] Medición de la acústica actual
+    \begin{enumerate}
+        \item[{C}1.] El sistema debe generar un sonido en el estudio de audio.
         \item El sistema debe grabar la respuesta del estudio de audio al sonido generado.
         \item El sistema debe calcular el tiempo de reverberación a partir de la respuesta del estudio de audio.
         \item El sistema debe calcular la claridad a partir de la respuesta del estudio de audio.
@@ -179,8 +179,8 @@ Función principal: Hacer un acondicionamiento acústico a un cuarto en función
     \end{enumerate}
 
     \item Modificación de la acústica
-    \begin{enumerate}[{C}1.]
-        \item El sistema debe conocer la diferencia entre la acústica actual y la acústica deseada.
+    \begin{enumerate}
+        \item[{C}1.] El sistema debe conocer la diferencia entre la acústica actual y la acústica deseada.
         \item El sistema debe calcular la posición de los paneles que generan la acústica deseada.
         \item El sistema debe calcular la diferencia entre la posición actual de los paneles y la posición deseada.
         \item El sistema debe mover los paneles a la posición deseada.
@@ -188,8 +188,8 @@ Función principal: Hacer un acondicionamiento acústico a un cuarto en función
     \end{enumerate}
 
     \item Interacción con el usuario
-    \begin{enumerate}[{C}1.]
-        \item El sistema debe recibir el tipo de instrumento que se va a grabar.
+    \begin{enumerate}
+        \item[{C}1.] El sistema debe recibir el tipo de instrumento que se va a grabar.
         \item El sistema debe saber la acústica óptima para el instrumento que se va a grabar.
         \item El sistema debe mostrar al usuario los parámetros acústicos que definen la acústica actual.
         \item El sistema debe mostrar al usuario las frecuencias problemáticas del estudio de audio (que generan ondas estacionarias).
@@ -200,8 +200,8 @@ Función principal: Hacer un acondicionamiento acústico a un cuarto en función
     \end{enumerate}
 
     \item Gestión de energía
-    \begin{enumerate}[{C}1.]
-        \item El sistema tiene un bajo consumo energético cuando no se está moviendo.
+    \begin{enumerate}
+        \item[{C}1.] El sistema tiene un bajo consumo energético cuando no se está moviendo.
         \item El sistema gestiona el movimiento de los paneles para evitar un uso excesivo de corriente.
         \item El sistema debe transformar y controlar la energía que obtiene de la red eléctrica para entregar la tensión de alimentación correcta a cada componente.
     \end{enumerate}
@@ -211,24 +211,24 @@ Función principal: Hacer un acondicionamiento acústico a un cuarto en función
 \begin{enumerate}
 %----------------1------------------
     \item Medición de la acústica actual
-    \begin{enumerate}[{1.}1.]
-        \item Generación de onda de sonido
-        \begin{enumerate}[{1.1.}1.]
-            \item Selección de ondas necesarias
+    \begin{enumerate}
+        \item[{1.}1.] Generación de onda de sonido
+        \begin{enumerate}
+            \item[{1.1.}1.] Selección de ondas necesarias
             \item Gestión de secuencia de ondas
             \item Generación de secuencia de ondas
         \end{enumerate}
         
         \item Obtención de la respuesta
-        \begin{enumerate}[{1.2.}1.]
-            \item Sensado de la respuesta
+        \begin{enumerate}
+            \item[{1.2.}1.] Sensado de la respuesta
         \end{enumerate}   
 
         \item Procesamiento de la respuesta
-        \begin{enumerate}[{1.3.}1.]
-            \item Cálculo de los parámetros acústicos
-            \begin{enumerate}[{1.3.1.}1.]
-                \item Cálculo del tiempo de reverberación
+        \begin{enumerate}
+            \item[{1.3.}1.] Cálculo de los parámetros acústicos
+            \begin{enumerate}
+                \item[{1.3.1.}1.] Cálculo del tiempo de reverberación
                 \item Cálculo de la claridad
                 \item Cálculo de la fuerza del sonido
                 \item Cálculo de la relación de energía lateral
@@ -238,8 +238,8 @@ Función principal: Hacer un acondicionamiento acústico a un cuarto en función
             \end{enumerate}
             
             \item Cálculo de modos normales de vibración
-            \begin{enumerate}[{1.3.2.}1.]
-                \item Obtención de dimensiones del estudio de audio
+            \begin{enumerate}
+                \item[{1.3.2.}1.] Obtención de dimensiones del estudio de audio
                 \item Obtención de posición de la fuente
                 \item Obtención de posición del receptor
             \end{enumerate}
@@ -248,16 +248,15 @@ Función principal: Hacer un acondicionamiento acústico a un cuarto en función
     
 %----------------2------------------
     \item Modificación de la acústica
-    \begin{enumerate}[{2.}1.]
-        \item Cálculo de posiciones deseadas
+    \begin{enumerate}
+        \item[{2.}1.] Cálculo de posiciones deseadas
         \item Compensación para disminución de modos normales de vibración
         
         \item Movimiento de paneles
-        \begin{enumerate}[{2.3.}1.]
-        
-            \item Medición del error de posición
-            \begin{enumerate}[{2.3.1.}1.]
-                \item Medición de la posición actual
+        \begin{enumerate}
+            \item[{2.3.}1.] Medición del error de posición
+            \begin{enumerate}
+                \item[{2.3.1.}1.] Medición de la posición actual
                 \item Cálculo del error de posición
             \end{enumerate}
 
@@ -268,25 +267,25 @@ Función principal: Hacer un acondicionamiento acústico a un cuarto en función
     
 %----------------3------------------   
     \item Interacción con el usuario
-    \begin{enumerate}[{3.}1.]
-        \item Recepción de instrucciones de acondicionamiento
-        \begin{enumerate}[{3.1.}1.]
-            \item Selección de instrumento
-            \begin{enumerate}[{3.1.1.}1.]
-                \item Despliegue de acústica ideal
+    \begin{enumerate}
+        \item[{3.}1.] Recepción de instrucciones de acondicionamiento
+        \begin{enumerate}
+            \item[{3.1.}1.] Selección de instrumento
+            \begin{enumerate}
+                \item[{3.1.1.}1.] Despliegue de acústica ideal
             \end{enumerate}
         \end{enumerate}
 
         \item Despliegue de acústica actual
-        \begin{enumerate}[{3.2.}1.]
-            \item Despliegue de las variables acústicas calculadas
+        \begin{enumerate}
+            \item[{3.2.}1.] Despliegue de las variables acústicas calculadas
             \item Despliegue de las frecuencias de vibración problemáticas
 
         \end{enumerate}
 
         \item Despliegue de la acústica posterior al acondicionamiento
-        \begin{enumerate}[{3.3.}1.]
-            \item Despliegue de las variables acústicas calculadas
+        \begin{enumerate}
+            \item[{3.3.}1.] Despliegue de las variables acústicas calculadas
             \item Despliegue de las ondas estacionarias
         \end{enumerate}
 
@@ -294,23 +293,22 @@ Función principal: Hacer un acondicionamiento acústico a un cuarto en función
     \end{enumerate}
 %----------------4------------------
     \item Gestión de energía
-    \begin{enumerate}[{4.}1.]
-    
-        \item Conversión y regulación de tensión
-        \begin{enumerate}[{4.1.}1.]
-            \item Conversión de tensión
+    \begin{enumerate}
+        \item[{4.}1.] Conversión y regulación de tensión
+        \begin{enumerate}
+            \item[{4.1.}1.] Conversión de tensión
             \item Regulación de tensión
         \end{enumerate}
 
         \item Medición del consumo energético
-        \begin{enumerate}[{4.2.}1.]
-            \item Medición de la tensión de entrada
+        \begin{enumerate}
+            \item[{4.2.}1.] Medición de la tensión de entrada
             \item Medición de la corriente de entrada
         \end{enumerate}
 
         \item Gestión del consumo energético
-        \begin{enumerate}[{4.3.}1.]
-            \item Disminución de la potencia proporcional al consumo
+        \begin{enumerate}
+            \item[{4.3.}1.] Disminución de la potencia proporcional al consumo
         \end{enumerate}
         
     \end{enumerate}
@@ -427,8 +425,8 @@ Se procedió a validar la relación entre los requerimientos y las funciones, pa
 \subsubsection{Arquitectura física}
 Para dar forma a la parte física del proyecto se definen los módulos que darán integridad a la propuesta de solución. La arquitectura física del sistema es representada por la transformación de las funciones en módulos, que tomarán parte en los ensambles y componentes físicos. La arquitectura física está planteada para ser capaz de realizar las funciones descritas en la arquitectura funcional y cumplir con los requerimientos del sistema para lograr el funcionamiento deseado.
 
-\begin{enumerate}[{MF}1]
-    \item Módulo de procesamiento: Es un módulo cuya función principal es el procesamiento de las ondas de sonido, el cálculo de las posiciones de los paneles y el procesamiento de los comandos ingresados por el usuario. El módulo se define en submódulos, donde el submódulo \textbf{MF}$_{1.1}$ es el encargado de procesar la respuesta del estudio y realizar los cálculos de los parámetros acústicos y los modos normales de vibración. En el submódulo \textbf{MF}$_{1.2}$ se generan los cálculos de las posiciones deseadas de los paneles, así como el procesamiento de la estrategia de control para el movimiento de los mismos, contemplando la medición y el cálculo del error de posición, para que la localización de los paneles sea fiable. El submódulo \textbf{MF}$_{1.3}$ se encarga de procesar todas las instrucciones de acondicionamiento ingresadas por el usuario, así como de todos los parámetros acústicos que se despliegan en la interfaz de muestreo.
+\begin{enumerate}
+    \item[{MF}1] Módulo de procesamiento: Es un módulo cuya función principal es el procesamiento de las ondas de sonido, el cálculo de las posiciones de los paneles y el procesamiento de los comandos ingresados por el usuario. El módulo se define en submódulos, donde el submódulo \textbf{MF}$_{1.1}$ es el encargado de procesar la respuesta del estudio y realizar los cálculos de los parámetros acústicos y los modos normales de vibración. En el submódulo \textbf{MF}$_{1.2}$ se generan los cálculos de las posiciones deseadas de los paneles, así como el procesamiento de la estrategia de control para el movimiento de los mismos, contemplando la medición y el cálculo del error de posición, para que la localización de los paneles sea fiable. El submódulo \textbf{MF}$_{1.3}$ se encarga de procesar todas las instrucciones de acondicionamiento ingresadas por el usuario, así como de todos los parámetros acústicos que se despliegan en la interfaz de muestreo.
 
     \item Módulo de generación y medición de la acústica: Tiene la función de generar las ondas que excitan el estudio (\textbf{MF}$_{2.1}$) y medir la interacción de las ondas con el recinto (\textbf{MF}$_{2.2}$). El submódulo de la generación de las ondas de sonido funciona a partir de un algoritmo que genera una señal se excitación que es transmitida al estudio mediante una bocina, las ondas que son transmitidas se encargan de describir las características del estudio. Así, las señales que interactúan con el estudio posteriormente son recibidas por el submódulo de medición que consta de un micrófono que capta todas las señales que han interactuado con el recinto.
 
