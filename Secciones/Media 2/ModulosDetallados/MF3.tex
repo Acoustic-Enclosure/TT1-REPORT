@@ -55,58 +55,301 @@ Para realizar la modificación de la acústica en el estudio se debe de cambiar 
     \end{longtable}
 \end{center}
 
-Después de observar las ventajas y desventajas de cada uno de los métodos de transmisión de movimiento nos decidimos por la trasmisión por medio de un tornillo sin fin y corona debido a que se tiene un buen control de la posición de los prismas que portan los paneles, tiene una gran capacidad de carga, además de que el ruido producido es bajo. Al elegir este tipo de transmisión surgieron problemas en cuanto las dimensiones del tornillo sin fin, ya que si optabamos por utilizar un solo tornillo sin fin para mover todos los primas este debia de ser de un largo bastante considerable, y realizar la fabricación de este sería una tarea difícil, por lo que en la Tabla \ref{tab:ComTornilloSF} se comparan las opciones que se tienen para realizar la transmisión de tornillo sin fin y corona.
+Después de observar las ventajas y desventajas de cada uno de los métodos de transmisión de movimiento nos decidimos por la trasmisión por medio de un tornillo sinfín y corona debido a que se tiene un buen control de la posición de los prismas que portan los paneles, tiene una gran capacidad de carga, además de que el ruido producido es bajo. Al elegir este tipo de transmisión surgieron problemas en cuanto las dimensiones del tornillo sin fin, ya que si optábamos por utilizar un solo tornillo sin fin para mover todos los primas este debía de ser de un largo bastante considerable, y realizar la fabricación de este sería una tarea difícil, por lo que en la Tabla \ref{tab:ComTornilloSF} se comparan las opciones que se tienen para realizar la transmisión de tornillo sin fin y corona.
 %-----------------------------tabla-----------------------------
 \begin{center}
 \footnotesize
-    \begin{longtable}[!htb]{| m{5em} | m{12em} | m{12em}| m{12em}|}
+    \begin{longtable}[!htb]{| m{7em} | m{10em} | m{12em}| m{12em}|}
     \hline
     \textbf{Tipo}& \textbf{Descripción} & \textbf{Ventajas} & \textbf{Desventajas}\\
     \hline\hline
 %---------------------------
-    Bandas y poleas& Utilizar poleas y bandas dentadas para poder realizar el movimiento giratorio de los primas triangulares &
+    Un solo tornillo & Utilizar un tornillo para mover todos los prismas triangulares &
     \begin{itemize}
-        \item Ruido mínimo
-        \item Vibraciones mínimas
-        \item Movimiento preciso con una sincronización exacta
-        \item Resistencia a la abrasión, al óxido, productos químicos y contaminantes.
+        \item No se necesita ningún cople o unión para mover todos los paneles utilizando un solo motor
     \end{itemize}
     & 
     \begin{itemize}
-        \item Se necesitan bandas de largas dimensiones
-        \item Mayor costo
-        \item Ideal para transferir a una potencia relativamente baja
-        \item La potencia de transferencia está a una distancia relativamente menor en comparación con otras bandas de transmisión
+        \item Difícil fabricación de un tornillo sin fin de esas dimensiones
+        \item Posible flexión debido a las dimensiones 
+        \item Posible torsión debido a las dimensiones
+        \item Elevado costo de fabricación
     \end{itemize}\\
     \hline
 %------------------------
-    Tornillo sin fin y corona & Utilizar un tornillo sin fin que mueva coronas, las cuales están acopladas a los primas triangulares &
+    Un tornillo por cada dos prismas triangulares & Utilizar tornillos sin fin de dimensiones más pequeñas para que cada uno de estos tornillos mueva dos primas triangulares &
     \begin{itemize}
-        \item Elevada capacidad de carga
-        \item Ruido mínimo
-        \item Movimiento preciso con una sincronización exacta
-        \item Compacto
+        \item Fácil de fabricar
+        \item Menor margen de error al momento de fabricar
+        \item Costos de fabricación bajos
     \end{itemize}
     & 
     \begin{itemize}
-        \item Bajo rendimiento en las etapas de reducción
-        \item Requiere mantenimiento periódico debido a que sufren desgaste por fricción
-        \item Costo de mantenimiento elevado si se llegara a requerir reparaciones.
+        \item Se necesitan coples para poder realizar el movimiento de todos los paneles utilizando un solo motor
+        \item Número elevado de tornillos sin fin que se deben de fabricar
     \end{itemize}\\
     \hline
 %------------------------    
-    Movimiento individual& Colocar un motor por cada uno de los prismas triangulares para controlarlos individualmente& 
+    Un tornillo por cada tres prismas triangulares& Utilizar tornillos sin fin de dimensiones más pequeñas para que cada uno de estos tornillos mueva tres primas triangulares& 
     \begin{itemize}
-        \item Control personalizado a cada prima sin la necesidad de ningún otro mecanismo 
-        \item Movimiento preciso con una sincronización exacta
+        \item Fácil de fabricar
+        \item Menor margen de error al momento de fabricar
+        \item Costos de fabricación bajos
     \end{itemize}
     & 
     \begin{itemize}
-        \item Elevado costo debido a que se necesitan comprar una gran cantidad de motores
-        \item Mayor consumo energético comparado con las otras opciones.
+        \item Se necesitan coples para poder realizar el movimiento de todos los paneles utilizando un solo motor
     \end{itemize}\\
     \hline
     \caption{Ventajas y desventajas relacionadas a la utilización de un tornillo sin fin único o varios segmentos de tornillo sin fin}
     \label{tab:ComTornilloSF}
     \end{longtable}
 \end{center}
+
+La mejor opción es la de utilizar un tornillo sin fin de dimensiones pequeñas, el cual esté encargado de mover tres prismas triangulares. Para poder utilizar un solo motor para mover los paneles se optó por utilizar coples entre cada unos de los tornillos sin fin, el problema que se tiene ahora es como realizar las combinaciones necesarias para poder cambiar los parámetros acústicos como se desea, para ellos se optaron por tres opciones para girar los prismas independientemente uno de otro, estas opciones se pueden observar en la Tabla.
+%-----------------------------tabla-----------------------------
+\begin{center}
+\footnotesize
+    \begin{longtable}[!htb]{| m{7em} | m{10em} | m{12em}| m{12em}|}
+    \hline
+    \textbf{Tipo}& \textbf{Descripción} & \textbf{Ventajas} & \textbf{Desventajas}\\
+    \hline\hline
+%---------------------------
+    Combinación binaria & Hacer que un prisma gire una vuelta completa cada vez que el prisma anterior de tres vueltas  &
+    \begin{itemize}
+        \item No hay necesidad de desacoplar ninguna parte del mecanismo
+        \item Menor cantidad de espacio ocupado
+    \end{itemize}
+    & 
+    \begin{itemize}
+        \item Giros excesivos de los primeros prismas para poder mover los últimos
+        \item Larga duración del proceso para obtener la configuración necesaria en los paneles
+        \item Desgaste excesivo en algunos componentes
+    \end{itemize}\\
+    \hline
+%------------------------
+    Utilización de guías lineales & Utilizar guías lineales para acoplar y desacoplar los tornillos la corona y el prima triangular del tornillo sin fin &
+    \begin{itemize}
+        \item Corta duración del proceso para obtener la configuración necesaria en los paneles
+    \end{itemize}
+    & 
+    \begin{itemize}
+        \item Costo elevado en la construcción de las guías lineales.
+        \item Posible desgaste de los dientes del tornillo sin fin y la corona al momento de acoplar y desacoplar
+        \item Mayores en el diseño.
+    \end{itemize}\\
+    \hline
+%------------------------    
+Utilizar un cople lineal & Acoplar y desacoplar el prima triangular de la corona sin fin por medio de un cople.&
+    \begin{itemize}
+        \item Corta duración del proceso para obtener la configuración necesaria en los paneles
+        \item Menor costo de fabricación
+        \item Menores dimensiones en el diseño
+    \end{itemize}
+    & 
+    \begin{itemize}
+        \item Complicado de fabricar
+    \end{itemize}\\
+    \hline
+    \caption{Ventajas y desventajas relacionadas a los diferentes métodos para obtener la configuración deseada en los paneles}
+    \label{tab:ComConfigPaneles}
+    \end{longtable}
+\end{center}
+
+\paragraph{Sistema de transmisión}\hfill \break
+
+Habiendo elegido el tipo de transmisión que genera la rotación del prima triangular y los demás elementos que conforman el sistema de transmisión, se desarrolla el cálculo de cada uno de los componentes asociados a ella. De acuerdo con Budynas y Keith\cite{Shigley2012}, no existe una secuencia precisa de pasos para algún proceso de diseño, Por su naturaleza , el diseño es un proceso iterativo en el que es necesario realizar algunas selecciones tentativas y construir un esquema previo para determinar las partes cruciales del mismo.
+    
+%\subparagraph{Potencia del motor}\hfill \break
+%---------------------------------------------------
+%\begin{enumerate}[2.2.4.1.1]
+%    \item  Potencia del motor
+%\end{enumerate}
+%---------------------------------------------------
+\subparagraph{Potencia del motor}\hfill \break
+Siguiendo la secuencia de diseño para transmisiones de potencia \cite{Shigley2012}, como primer paso es conocer los requisitos de potencia y par de torsión, ya que determinará las necesidades globales de dimensionamiento de todo el sistema.\hfill \break
+Para el calculo de la potencia necesaria del motor, mediante el diseño preliminar se obtiene el peso que se moverá mediante el sistema de transmisión corona - sinfín, el cual es de 8.58 $Kg_f$\break
+Se tiene que el momento de torsión \cite{Rodriguez2015} necesario para mover la corona es igual a:
+\begin{equation}
+    M_t = F\cdot d
+\end{equation}
+Donde $M_t$ es el momento de torsión [$Kg_f\cdot mm$], $F$ es la fuerza necesaria para mover la carga [$Kg_f$] y $d$ es el radio de la corona [$mm$].
+Para una corona con un radio propuesto de 71 $mm$ se obtiene:
+\begin{equation*}
+    M_t = 8.58 Kg_f\cdot 71 mm
+\end{equation*}
+\begin{equation*}
+    M_t = 609.18 Kg_f\cdot mm    
+\end{equation*}
+Teniendo el momento de torsión se calcula la potencia consumida a partir de la siguiente ecuación \cite{Rodriguez2015}.
+\begin{equation}
+    M_t = \frac{716,200\cdot N_{CON}}{n}
+\end{equation}
+Donde $M_t$ es el momento de torsión [$Kg_f\cdot mm$], $N_{CON}$ la potencia consumida [$C.P.$] y $n$ es la velocidad angular de la corona [$rpm$].
+Considerando $n=20$ $rpm$ como la velocidad angular de salida necesaria de la corona, se obtiene la potencia despejando la fórmula, obteniendo:
+\begin{equation*}
+    N_{CON}=\frac{M_t\cdot n}{716,200}
+\end{equation*}
+\begin{equation*}
+    N_{CON}=\frac{(609.18 Kg_f\cdot mm)(20rpm)}{716,200}
+\end{equation*}
+\begin{equation*}
+    N_{CON}=0.017 C.P.
+\end{equation*}
+Luego, para la potencia suministrada se considera la siguiente fórmula \cite{Rodriguez2015}.
+\begin{equation}\label{equ:PotenciaSUM}
+    N_{SUM}=\frac{N_{CON}}{\eta_T}
+\end{equation}
+Donde $\eta_T$ es la eficiencia del sistema de transmisión corona-sin fin dada por \cite{Rodriguez2015}: 
+\begin{equation}
+    \eta_T=(0.92 \rightarrow 0.98)\eta_d
+\end{equation}
+
+Teniendo que
+\begin{equation} \label{eficiencia_d}
+    \eta_d=\frac{\tan{\beta}}{\tan{(\beta+\phi)}}
+\end{equation}
+
+Donde en la ecuación (\ref{eficiencia_d}), $\beta$ es el ángulo de avance
+\begin{equation} \label{beta}
+    \beta=\tan^{-1}\left( \frac{Z_1}{2K}\right)
+\end{equation}
+
+y $\phi$ el ángulo de fricción resultante
+\begin{equation}\label{phi}
+    \phi=\tan^{-1}\left( \mu_k \right)
+\end{equation}
+
+En la ecuación (\ref{beta}) \hfill \break $Z_1$ es el número de filetes del tornillo.\hfill \break
+$K$ es la relación diámetro del tornillo y el módulo (factor diámetro).\hfill \break
+Donde $K$ es obtenido de la tabla \ref{tab:FactorK} \cite{Rodriguez2015}.
+
+%----------- Tabla de K------------------------
+\footnotesize
+\begin{longtable}[!htb]{| m{15em}| m{10em}|}
+\caption{Factor K en función del numero de filetes del tornillo}
+\label{tab:FactorK} \\
+\hline\hline
+\textbf{Número de filetes $Z_1$}& \textbf{Factor $K$} \\
+\hline\hline
+%---------------------------
+1 & 3.4 \\
+\hline
+%------------------------
+2 & 4.2 \\
+\hline
+%------------------------    
+3 & 4.8 \\
+\hline
+%------------------------    
+4 & 5.3 \\
+\hline 
+\end{longtable}
+%----------------------------------------------------
+Proponiendo un tornillo con $Z_1=1$, se tiene un factor $K$=3.4, obteniendo.
+\begin{equation*}
+    \beta=\tan^{-1}\left( \frac{1}{2(3.4)}\right)
+\end{equation*}
+\begin{equation*}
+    \beta=\tan^{-1}\left( \frac{1}{6.8}\right)
+\end{equation*}
+\begin{equation*}
+    \beta=8.3658\degree
+\end{equation*}
+
+Para la ecuación (\ref{phi})\hfill\break
+$\mu_k$ es el coeficiente de fricción dinámico.\hfill\break
+En donde el $\mu_k$ entre el hierro (material del tornillo) y el bronce (material de la corona) es igual a 0.22 \cite{Norton2011}. Teniendo el valor de $\mu_k$ se obtiene que el valor del ángulo de fricción resultante.
+\begin{equation*}
+    \phi=\tan^{-1}(0.22)
+\end{equation*}
+\begin{equation*}
+    \phi=12.407\degree
+\end{equation*}
+Retomando la ecuación (\ref{eficiencia_d}), se sustituyen los valores de los ángulos.
+\begin{equation*}
+    \eta_d=\frac{\tan(8.3658\degree)}{\tan(8.3658\degree+12.407\degree)}
+\end{equation*}
+\begin{equation*}
+    \eta_d=\frac{\tan(8.3658\degree)}{\tan(20.7728\degree)}
+\end{equation*}
+\begin{equation*}
+    \eta_d=0.3877
+\end{equation*}
+Para obtener la eficiencia total $\eta_T$ se multiplica por el límite inferior, debido a que se desea obtener la potencia para el sistema menos eficiente.
+\begin{equation*}
+    \eta_T=(0.92)\eta_d
+\end{equation*}
+\begin{equation*}
+    \eta_T=(0.92)(0.3877)
+\end{equation*}
+\begin{equation*}
+    \eta_T=0.3567
+\end{equation*}
+Con los datos obtenidos se puede resolver la ecuación (\ref{equ:PotenciaSUM}), dando como resultado.
+\begin{equation*}
+    N_{SUM}=\frac{0.017}{0.3567}
+\end{equation*}
+\begin{equation*}
+    N_{SUM}=0.0477 C.P.
+\end{equation*}
+El valor obtenido de la $N_{SUM}$ es para un solo mecanismo de corona-sinfín, pero el sistema que se propone es un arreglo de nueve mecanismos de corona-sinfín, por lo que es válido el multiplicar esa potencia necesaria por el número de mecanismos acoplados al eje. 
+\begin{equation*}
+    N_{SUMT}=9(N_{SUM}) 
+\end{equation*}
+\begin{equation*}
+    N_{SUMT}=9(0.0477) 
+\end{equation*}
+\begin{equation*}
+    N_{SUMT}=0.4289 C.P. 
+\end{equation*}
+Para corroborar la potencia necesaria se procede a utilizar otra bibliografía en la que la eficiencia del mecanismo corona-sinfín se basa en el ángulo de presión, en el ángulo de avance y el coeficiente de fricción dinámico.
+
+\begin{equation}
+    \eta_T=\frac{\cos{\beta}-\mu_k\tan{\lambda}}{\cos{\beta}+\mu_k\cot{\lambda}}
+\end{equation}
+
+Donde\hfill\break
+$\beta$ es el ángulo de presión.\hfill\break
+$\lambda$ es el ángulo de avance.\hfill\break
+$\mu_k$ es el coeficiente de fricción dinámico.\hfill\break
+Proponiendo un mecanismo corona-sinfín con $\beta$=20\degree.
+\begin{equation*}
+    \eta_T=\frac{\cos{20\degree}-0.22\tan{8.3658\degree}}{\cos{20\degree}+0.22\cot{8.3658\degree}}
+\end{equation*}
+\begin{equation*}
+    \eta_T=0.3725
+\end{equation*}
+Por lo tanto, en la ecuación (\ref{equ:PotenciaSUM}) se sustituyen valores.
+\begin{equation*}
+    N_{SUM}=\frac{0.017}{0.3725}
+\end{equation*}
+\begin{equation*}
+    N_{SUM}=0.04564 C.P.
+\end{equation*}
+De igual forma para encontrar la $N_{SUMT}$ se multiplica por la cantidad de mecanismos.
+\begin{equation*}
+    N_{SUMT}=9(N_{SUM}) 
+\end{equation*}
+\begin{equation*}
+    N_{SUMT}=9(0.04564) 
+\end{equation*}
+\begin{equation*}
+    N_{SUMT}=0.4107 C.P. 
+\end{equation*}
+\subparagraph{Motor}\hfill \break
+Al obtener la potencia necesaria para el correcto funcionamiento del sistema se procede a hacer la selección del motor.
+Para el sistema de transmisión se optó por utilizar un motor de CA, debido a que representa ventajas sobre los motores de CD.
+Factores importantes para la selección del motor de CA es en la eficiencia y el desempeño, ya que los motores de CA son más eficientes en una amplia gama de velocidades y cargas, esto se traduce en la reducción del consumo energético, a demás de que tienen mejor desempeño con cargas variables, lo que hace que sean más confiables, sin mencionar que tienen una vida útil más larga.\cite{MotoresElectricos} \hfill\break
+Los motores de CA presentan ventajas para aplicaciones en las que se requiere un alto Par y alta demanda de potencia, teniendo en cuenta lo anterior y que la potencia necesaria es de 0.4289 C.P. potencia que es difícil de encontrar en motores de CD. Este proceso de selección se ejemplifica en el diagrama de rutas de la Figura \ref{fig:RutaSelecciónMotor}.
+\hfill\break
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.45\linewidth]{imagenes/DiagramaSelecciónMotor.jpeg}
+    \caption{Diagrama de rutas para la selección del tipo de motor para el sistema de transmisión.}
+    \label{fig:RutaSelecciónMotor}
+\end{figure}
+\FloatBarrier
+Las principales características de interés para el sistema de transmisión es que el motor sea capaz de operar con movimiento continuo y con cargas variables, por lo que se seleccionó un motor monofásico MOE-1/2B de $\frac{1}{2}$ C.P. de baja velocidad y alto torque de la marca Truper, debido a su precio accesible y que cumple con los requerimientos del sistema. Las características del motor se muestran a detalle en el Anexo A.
+
+\subparagraph{Corona-Sinfín}\hfill \break
