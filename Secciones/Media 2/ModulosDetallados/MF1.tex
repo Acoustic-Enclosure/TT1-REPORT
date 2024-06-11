@@ -1,4 +1,6 @@
-\subsubsection{MF1.1. Procesamiento de la respuesta y cálculo de la acústica}
+\subsubsection{MF1. Módulo de procesamiento}
+
+\subsubsubsection{MF1.1. Procesamiento de la respuesta y cálculo de la acústica}
 
 A partir de la respuesta al impulso de un recinto, se pueden derivar distintos parámetros acústicos, como los establecidos en la \href{https://www.iso.org/standard/36201.html}{ISO-3382}. Siendo que la respuesta al impulso la podemos obtener de mediciones físicas, de simulaciones del recinto, e incluso de bancos de datos con respuestas de múltiples recintos para fines de validación, fue necesario tener una metodología general que nos permitiera analizar datos de diferentes fuentes. \hfill\break
 El programa de generación y medición de la acústica, tiene como salida una estructura con los datos de la respuesta al impulso y el tiempo de muestreo; para las simulaciones y los bancos de datos, las respuestas al impulso se guardan como un archivo de tipo \textit{wav}. Se iniciará con una línea de lectura de archivos de este tipo, que se desactivara en caso de usarse consecutivo al programa de generación y medición de la acústica. Dicho código también se encargara de combinar las señales en caso de leer archivos \textit{wav} con múltiples canales.
@@ -585,7 +587,7 @@ Una vez comprobada la implementación en MATLAB, podemos utilizarla con caracter
 
 %------------------------------------------------------------------------
 
-\subsubsection{MF1.2 Procesamiento de la estrategia de control}
+\subsubsubsection{MF1.2 Procesamiento de la estrategia de control}
 
 El control del sistema se hará mediante una ley de control de lazo cerrado de tipo PID. Se decidió hacer uso de esta estrategia básica debido a la transmisión de engrane de corona que tiene el sistema. \\
 El sistema de transmisión permite un desacople de inercias, esto gracias a que en caso que el tornillo no se mueve, el eje perpendicular que contiene la corona no puede moverse por su propia inercia inercia, ya que sus dientes se detienen con los dientes del tornillo (que no cuentan con movimiento en el eje perpendicular al de la corona). Por lo anterior, se puede hacer el control del eje del tornillo tomando en cuenta para el control, únicamente la inercia y amortiguamiento efectivo de este. El peso del eje de la corona, se puede ver como una fuerza externa que se aplica sobre el sistema principal y que se sopesa mediante el control PID. \\
@@ -726,7 +728,7 @@ Para ejemplificar el funcionamiento tomemos el vector \textit{arrange} como $[1,
 Se puede observar que al menos en la simulación, lo único que rige el movimiento del tornillo sinfín es la inercia y el amortiguamiento, y, debido a que el controlador toma en cuenta la inercia efectiva y el amortiguamiento efectivo para el calculo de la ley de control; el seguimiento presenta muy poco error. Además, al hacer un seguimiento de trayectoria en lugar de una referencia constante como en un impulso, se reduce en gran medida el sobre impulso y el tiempo de asentamiento. Se espera que en las pruebas físicas, se presente un error un poco mayor al previsto por la simulación debido al efecto de la masa del prisma triangular actuando como fuerza externa. \\
 %------------------------------------------------------------------------
 
-\subsubsection{MF1.3 Interacciones del sistema}
+\subsubsubsection{MF1.3 Interacciones del sistema}
 
 Este módulo se encarga de recibir las instrucciones de acondicionamiento emitidas por el usuario en la interfaz, así como de disponer la información necesaria para que pueda visualizarse en la interfaz, es donde los diferentes programas que componen al proyecto interactúan bajo la arquitectura descrita en la figura \ref{fig:ArquitecturaComunicacion}.\\
 
@@ -917,8 +919,7 @@ Es necesario un programa que haga la gestión de las funciones de cálculo y pro
 \textbf{Herramientas y Bibliotecas Predefinidas} & Incluye muchas bibliotecas útiles por defecto & Minimalista, depende de extensiones & Incluye herramientas para desarrollo rápido de APIs & Incluye muchas bibliotecas y herramientas \\
 \hline
 \caption{Comparación de Frameworks para Desarrollo Backend}
-\label{tab
-}
+\label{tab:comparacion_backend}
 \end{longtable}
 %
 En Python existen diversos marcos de trabajo con los cuales se puede desarrollar herramientas como esta, siendo Django nuestra mejor opción debido a su robustez y capacidad para manejar múltiples tareas de manera eficiente. Django ofrece una estructura clara y modular que facilita la gestión de la ejecución de códigos existentes, la realización de operaciones CRUD (crear, leer, actualizar, eliminar) en la base de datos, y esto viviendo desde la nube de GCP. Además, Django proporciona una gran cantidad de herramientas y bibliotecas predefinidas que simplifican la creación de endpoints (puntos de acceso) HTTP para la comunicación con la interfaz de usuario y la Raspberry Pi. Comparado con otras alternativas como Flask o FastAPI, Django destaca por su enfoque en la seguridad, la escalabilidad y la rápida velocidad de desarrollo, haciendo que sea una solución ideal para un proyecto que requiere una integración compleja y una gestión eficiente de recursos. \\

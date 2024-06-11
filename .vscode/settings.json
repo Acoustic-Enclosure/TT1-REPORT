@@ -84,8 +84,6 @@
   "latex-workshop.intellisense.citation.backend": "biblatex",
   // Automatically build when a file is saved.
   "latex-workshop.latex.autoBuild.run": "never",
-  // Show error message when LaTeX build fails.
-  // "latex-workshop.message.error.show": true,
   // Sync PDF with cursor position after compiling.
   "latex-workshop.synctex.afterBuild.enabled": true,
   // Automatically choose last used recipe on next build.
