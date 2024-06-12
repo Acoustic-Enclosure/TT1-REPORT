@@ -582,10 +582,8 @@ Para comprobar el funcionamiento de nuestra simulación, recurrimos al uso de un
 \FloatBarrier
 Como se puede observar, la simulación en Python arroja resultados muy similares a los obtenidos con la implementación en MATLAB. En el caso de MATLAB, el tiempo de reverberación calculado fue de $6.19 segundos$ mientras que en Python fue de $6.024 segundos$, un tiempo muy cercado considerando que se pierde resolución conforme aumenta el tiempo de reverberación debido a la naturaleza exponencial del decaimiento. \\
 Una vez comprobada la implementación en MATLAB, podemos utilizarla con características localizadas de los materiales en las paredes. La simulación aun no es capaz de generar la respuesta al impulso de un recinto lleno (de instrumentos, muebles, decoración, etc.) debido a la complejidad de las interacciones. Para este propósito se buscara la utilización de un software especializado llamado CADNAR.
-%------------------------------------------------------------------------
 
-
-%------------------------------------------------------------------------
+%-----------------------------------------------------------------------------------
 
 \subsubsubsection{MF1.2 Procesamiento de la estrategia de control}
 
@@ -726,6 +724,7 @@ Para ejemplificar el funcionamiento tomemos el vector \textit{arrange} como $[1,
 \FloatBarrier
 
 Se puede observar que al menos en la simulación, lo único que rige el movimiento del tornillo sinfín es la inercia y el amortiguamiento, y, debido a que el controlador toma en cuenta la inercia efectiva y el amortiguamiento efectivo para el calculo de la ley de control; el seguimiento presenta muy poco error. Además, al hacer un seguimiento de trayectoria en lugar de una referencia constante como en un impulso, se reduce en gran medida el sobre impulso y el tiempo de asentamiento. Se espera que en las pruebas físicas, se presente un error un poco mayor al previsto por la simulación debido al efecto de la masa del prisma triangular actuando como fuerza externa. \\
+
 %------------------------------------------------------------------------
 
 \subsubsubsection{MF1.3 Interacciones del sistema}
@@ -747,13 +746,13 @@ La integración entre el dispositivo físico seleccionado para el procesamiento 
 \hline
 \textbf{Protocolo} & \textbf{Ventajas} & \textbf{Desventajas} \\
 \hline\raggedright
-MQTT\\(Message Queuing Telemetry Transport) & Es un protocolo ligero diseñado para conexiones remotas con dispositivos con recursos limitados y redes de ancho de banda restringido. Ideal para redes de sensores y aplicaciones de telemetría debido a su bajo consumo de datos. & Menor compatibilidad con aplicaciones web estándar. Requiere un broker MQTT adicional para gestionar la comunicación. \\
+MQTT \cite{mqtt}\\(Message Queuing Telemetry Transport) & Es un protocolo ligero diseñado para conexiones remotas con dispositivos con recursos limitados y redes de ancho de banda restringido. Ideal para redes de sensores y aplicaciones de telemetría debido a su bajo consumo de datos. & Menor compatibilidad con aplicaciones web estándar. Requiere un broker MQTT adicional para gestionar la comunicación. \\
 \hline\raggedright
-CoAP\\(Constrained Application Protocol) & Diseñado para dispositivos con recursos limitados en redes de baja potencia. Es similar a HTTP pero más ligero, utilizando UDP en lugar de TCP. & Menos soporte y herramientas en comparación con HTTP. No es tan ampliamente adoptado, lo que puede limitar la interoperabilidad. \\
+CoAP \cite{coap}\\(Constrained Application Protocol) & Diseñado para dispositivos con recursos limitados en redes de baja potencia. Es similar a HTTP pero más ligero, utilizando UDP en lugar de TCP. & Menos soporte y herramientas en comparación con HTTP. No es tan ampliamente adoptado, lo que puede limitar la interoperabilidad. \\
 \hline\raggedright
-WebSockets & Permite comunicación bidireccional en tiempo real entre el cliente y el servidor. Es ideal para aplicaciones que requieren actualizaciones en tiempo real como chats y juegos en línea. & Puede ser más complejo de implementar y gestionar en comparación con HTTP. Requiere soporte tanto en el servidor como en el cliente para mantener la conexión activa. \\
+WebSockets \cite{websockets} & Permite comunicación bidireccional en tiempo real entre el cliente y el servidor. Es ideal para aplicaciones que requieren actualizaciones en tiempo real como chats y juegos en línea. & Puede ser más complejo de implementar y gestionar en comparación con HTTP. Requiere soporte tanto en el servidor como en el cliente para mantener la conexión activa. \\
 \hline\raggedright
-gRPC\\(gRPC Remote Procedure Calls) & Protocolo de alto rendimiento basado en HTTP/2 que permite la llamada a procedimientos remotos (RPC). Ideal para comunicaciones eficientes entre servicios. & Puede ser más complejo de implementar y requiere que ambos extremos (cliente y servidor) soporten gRPC. No es tan adecuado para aplicaciones con interfaces web estándar. \\
+gRPC \cite{grpc}\\(gRPC Remote Procedure Calls) & Protocolo de alto rendimiento basado en HTTP/2 que permite la llamada a procedimientos remotos (RPC). Ideal para comunicaciones eficientes entre servicios. & Puede ser más complejo de implementar y requiere que ambos extremos (cliente y servidor) soporten gRPC. No es tan adecuado para aplicaciones con interfaces web estándar. \\
 \hline
 \caption{Comparación de protocolos de comunicación}
 \label{tab:comparacion_protocolos}
@@ -773,30 +772,30 @@ La elección de HTTP como protocolo de comunicación en este proyecto se debe lo
     \item \textbf{Ecosistema de Servicios}: Utilizar HTTP permite aprovechar una amplia gama de servicios en la nube y herramientas web. Esto incluye opciones para almacenamiento, procesamiento de datos y otros servicios que pueden integrarse fácilmente en el sistema, ofreciendo una solución completa y robusta.
 \end{itemize}
 %
-Tras el análisis, en comparación con los distintos protocolos disponibles, se seleccionó HTTP debido a su amplio soporte, interoperabilidad con tecnologías web estándar y su capacidad para facilitar la transferencia de datos de manera segura y eficiente entre el procesador y el PC del usuario, lo que contribuye significativamente a la implementación exitosa de nuestro sistema con las tecnologías previamente seleccionadas que son MATLAB, Python, JavaScript y a la simbiótica integración que tienen estas con una arquitectura ampliamente utilizada en la industria como es el uso de la nube.
+Tras el análisis, en comparación con los distintos protocolos disponibles, se seleccionó HTTP debido a su amplio soporte, interoperabilidad con tecnologías web estándar y su capacidad para facilitar la transferencia de datos de manera segura y eficiente entre el procesador y el PC del usuario \cite{http}, lo que contribuye significativamente a la implementación exitosa de nuestro sistema con las tecnologías previamente seleccionadas que son MATLAB, Python, JavaScript y a la simbiótica integración que tienen estas con una arquitectura ampliamente utilizada en la industria como es el uso de la nube.
 %
 \paragraph{Nube}
-La integración de un servidor en nube desempeña un papel fundamental en la infraestructura y el funcionamiento integral de nuestro proyecto. Debido a la naturaleza del mismo, tenemos que contar con recepción, análisis y transmisión de datos entre el dispositivo Raspberry Pi y el usuario final en su interfaz gráfica, estos servicios requieren de un entorno robusto y escalable que la nube puede proporcionar de manera efectiva, rápida y alcanzable para nuestro tiempo de desarrollo. \\
+La integración de un servidor en nube desempeña un papel fundamental en la infraestructura y el funcionamiento integral de nuestro proyecto. Debido a la naturaleza del mismo, tenemos que contar con recepción, análisis y transmisión de datos entre el dispositivo Raspberry Pi y el usuario final en su interfaz gráfica, estos servicios requieren de un entorno robusto y escalable que la nube puede proporcionar de manera efectiva, rápida y alcanzable para nuestro tiempo de desarrollo \cite{AnoteOnIoT}. \\
 
 En primer lugar, la nube actúa como un repositorio centralizado para almacenar los datos generados en una base de datos. Esto garantiza la disponibilidad y la integridad de los datos, además de facilitar su acceso y gestión desde cualquier ubicación. La base de datos permite el almacenamiento estructurado y eficiente de la información relevante para el usuario. Otro aspecto crucial es la capacidad para ejecutar funciones y servicios de forma remota, lo que permite una interacción dinámica entre el usuario y el dispositivo Raspberry Pi. A través de esta infraestructura, el usuario puede enviar instrucciones y solicitudes que viajan por internet, y activan acciones específicas en el dispositivo, como puede ser una consulta de los últimos datos de lectura, o iniciar un nuevo acondicionamiento. \\
 
-La utilización de la nube, es de ayuda para garantizar la escalabilidad, seguridad e interactividad necesarias para ofrecer una solución completa y eficiente a nuestras necesidades. La elección de un proveedor de nube adecuado se basa en los criterios de disponibilidad y confiabilidad en el servicio (uptime), ubicación del centro de datos, escalabilidad y flexibilidad, seguridad, servicios ofrecidos, costo. A continuación, se presenta una tabla de comparación \ref{tab:comparacion_nube1} entre diferentes ofertas de proveedores de servicios en la nube de acuerdo a estos criterios que nos ayudaron en la selección de nuestro proveedor.
+La utilización de la nube, es de ayuda para garantizar la escalabilidad, seguridad e interactividad necesarias para ofrecer una solución completa y eficiente a nuestras necesidades \cite{IoTandCloudConvergence}. La elección de un proveedor de nube adecuado se basa en los criterios de disponibilidad y confiabilidad en el servicio (uptime), ubicación del centro de datos, escalabilidad y flexibilidad, seguridad, servicios ofrecidos, costo. A continuación, se presenta una tabla de comparación \ref{tab:comparacion_nube1} entre diferentes ofertas de proveedores de servicios en la nube de acuerdo a estos criterios que nos ayudaron en la selección de nuestro proveedor.
 %
-\begin{longtable}{|m{3cm}|m{3cm}|m{6cm}|m{3cm}|}
+\begin{longtable}{|m{4.5cm}|m{2.5cm}|m{5cm}|m{3cm}|}
 \hline
 \textbf{Proveedor de Nube} & \textbf{Uptime (\%)} & \textbf{Ubicación del Centro de Datos} & \textbf{Escalabilidad y Flexibilidad} \\
 \hline
-\textbf{Amazon AWS} & 99.95 & Querétaro, México & Alta \\
+\textbf{Amazon AWS \cite{aws}} & 99.95 & Querétaro, México & Alta \\
 \hline
-\textbf{Google Cloud Platform GCP} & 99.95 & Los Angeles, US & Alta \\
+\textbf{Google Cloud Platform GCP \cite{gcp}} & 99.95 & Los Angeles, US & Alta \\
 \hline
-\textbf{Microsoft Azure} & 99.99 & Querétaro, México & Alta \\
+\textbf{Microsoft Azure \cite{azure}} & 99.99 & Querétaro, México & Alta \\
 \hline
-\textbf{IBM Z Cloud} & 99.95 & Dallas, US & Media-Alta \\
+\textbf{IBM Z Cloud \cite{ibmcloud}} & 99.95 & Dallas, US & Media-Alta \\
 \hline
-\textbf{Oracle Cloud} & 99.95 & Querétaro, México & Media-Alta \\
+\textbf{Oracle Cloud \cite{oraclecloud}} & 99.95 & Querétaro, México & Media-Alta \\
 \hline
-\textbf{Digital Ocean} & 99.99 & San Francisco, US & Alta \\
+\textbf{Digital Ocean \cite{digitalocean}} & 99.99 & San Francisco, US & Alta \\
 \hline
 \caption{Comparación de proveedores de nube según criterios}
 \label{tab:comparacion_nube1}
@@ -818,7 +817,7 @@ Y una comparación entre la disponibilidad de servicios \ref{tab:comparacion_nub
 \hline
 \textbf{IA/ML} & \cellcolor{green!25}Sí & \cellcolor{green!25}Sí & \cellcolor{green!25}Sí & \cellcolor{red!25}No & \cellcolor{red!25}No & \cellcolor{red!25}No \\
 \hline
-\caption{Comparación de proveedores de nube según servicios}
+\caption{Comparación de proveedores de nube según servicios \cite{comparecloud}}
 \label{tab:comparacion_nube2}
 \end{longtable}
 %
@@ -838,7 +837,7 @@ Para la selección de la base de datos, consideramos principalmente la facilidad
 \hline
 \textbf{Casos de Uso} & Aplicaciones con integridad de datos y transacciones seguras, proyectos con estructura de datos predefinida & Aplicaciones web escalables, manejo de datos no estructurados, análisis de big data \\
 \hline
-\caption{Comparación de Bases de Datos SQL y NoSQL}
+\caption{Comparación de Bases de Datos SQL y NoSQL \cite{SQLvsNoSQL}}
 \label{tab:comparacion_bd_sql_nosql}
 \end{longtable}
 %
@@ -850,7 +849,7 @@ Bajo esta condición seguimos encontrando una oferta amplia, desde bases de dato
 \textbf{Base de Datos} & \textbf{Tipo} & \textbf{Descripción} & \textbf{Casos de uso}\\
 \hline
 \textbf
-{Bigtable} & 
+{Bigtable \cite{bigtable}} & 
 Clave-valor &
 Servicio de bases de datos NoSQL de alto rendimiento y totalmente gestionado, pensado para grandes cargas de trabajo analíticas y operativas. Procesa picos de más de 5000 millones de solicitudes por segundo y puede gestionar más de 10 exabytes de datos. &  
 \begin{itemize}[label={}, leftmargin=0pt]
@@ -859,7 +858,7 @@ Servicio de bases de datos NoSQL de alto rendimiento y totalmente gestionado, pe
 \end{itemize}\\
 \hline
 \textbf
-{Firestore} & 
+{Firestore \cite{firestore}} & 
 Documentos &
 Servicio de bases de datos de documentos altamente escalable y muy popular, diseñado para el desarrollo móvil, web y de servidores, que permite hacer consultas más rápidas y fructíferas. & 
 \begin{itemize}[label={}, leftmargin=0pt]
@@ -868,7 +867,7 @@ Servicio de bases de datos de documentos altamente escalable y muy popular, dise
 \end{itemize}\\
 \hline
 \textbf
-{Memory store} &
+{Memory store \cite{memorystore}} &
 En memoria &
 Acceso a los datos en un tiempo inferior a un milisegundo con Redis y Memcached totalmente gestionados. &
 \begin{itemize}[label={}, leftmargin=0pt]
@@ -877,7 +876,7 @@ Acceso a los datos en un tiempo inferior a un milisegundo con Redis y Memcached 
 \end{itemize}\\
 \hline
 \textbf
-{MongoDB} &
+{MongoDB \cite{mongodb}} &
 Documentos &
 De código abierto que se destaca por su flexibilidad y escalabilidad. Su flexibilidad y capacidad para manejar datos no estructurados o semiestructurados lo hacen adecuado para proyectos donde la estructura de los datos puede cambiar con el tiempo o es difícil de modelar en un esquema relacional tradicional. &
 \begin{itemize}[label={}, leftmargin=0pt]
@@ -894,11 +893,11 @@ La decisión entre Firebase (Firestore) y MongoDB para el proyecto generó una d
 
 \paragraph{Marco de trabajo para la conexión}
 
-Es necesario un programa que haga la gestión de las funciones de cálculo y procesamiento, que realice las distintas operaciones en base de datos, y exponga los puntos de acceso para las solicitudes HTTP. Es decir, una pieza de software que integre las herramientas mencionadas hasta el momento en este módulo, este programa es conocido como el backend del proyecto. \\
+Es necesario un programa que haga la gestión de las funciones de cálculo y procesamiento, que realice las distintas operaciones en base de datos, y exponga los puntos de acceso para las solicitudes HTTP. Es decir, una pieza de software que integre las herramientas mencionadas hasta el momento en este módulo, este programa es conocido como el backend del proyecto \cite{backendDev}. \\
 %
 \begin{longtable}{|m{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}|}
 \hline
-\textbf{Características} & \textbf{Django} & \textbf{Flask} & \textbf{FastAPI} & \textbf{Spring Boot} \\
+\textbf{Características} & \textbf{Django \cite{django}} & \textbf{Flask \cite{flask}} & \textbf{FastAPI \cite{fastapi}} & \textbf{Spring Boot \cite{springboot}} \\
 \hline
 \textbf{Estructura y Modularidad} & Estructura completa, incluye ORM y autenticación & Microframework, altamente flexible & API-first, basado en OpenAPI & Framework completo, incluye muchas herramientas \\
 \hline
